@@ -11,3 +11,9 @@ data.db
 !.env.example
 .dev.vars
 .dev.vars.*
+
+# Tài liệu gốc dự án (nặng, nội bộ) & file tạm
+OneDrive_*/
+_preview/
+.DS_Store
+.wrangler/

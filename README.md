@@ -1,3 +1,22 @@
+# TT GENESIS – Landing page bán hàng
+
+Trang chủ `/` là landing page chạy quảng cáo cho dự án **TT GENESIS – Căn hộ Tri thức Nhật Bản tại Nam Sài Gòn**, do Luna Holdings (đơn vị tư vấn & phân phối) vận hành. Blog/CMS EmDash vẫn hoạt động tại `/posts` để làm SEO.
+
+| Việc cần làm | Sửa ở đâu |
+|---|---|
+| Đổi hotline, Zalo, tên công ty | `src/config/landing.ts` → `CONTACT` |
+| Nhận lead về Google Sheet | `docs/HUONG-DAN-GOOGLE-SHEET.md` → dán URL vào `LEAD.webhookUrl` |
+| Gắn GTM / GA4 / Meta Pixel / TikTok Pixel | `src/config/landing.ts` → `TRACKING` |
+| Đổi nội dung, giá, chính sách | mảng dữ liệu đầu file `src/pages/index.astro` |
+| Đổi hình ảnh | `public/img/` (WebP) |
+| Giao diện | `src/styles/landing.css` |
+
+Trang được prerender tĩnh (`export const prerender = true`) nên tải rất nhanh và không phụ thuộc database.
+
+> Tài liệu gốc của dự án (thư mục `OneDrive_*`, ~2 GB) **không** đưa lên git – xem `.gitignore`.
+
+---
+
 # EmDash Blog Template (Cloudflare)
 
 A clean, minimal blog built with [EmDash](https://github.com/emdash-cms/emdash) and deployed on Cloudflare Workers with D1 and R2.

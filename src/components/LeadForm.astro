@@ -1,0 +1,38 @@
+---
+/** Form thu lead — gửi về Google Sheet (webhook khai báo ở src/config/landing.ts). */
+interface Props {
+	id: string;
+	title: string;
+	subtitle?: string;
+	cta?: string;
+}
+const { id, title, subtitle, cta = "Đăng ký" } = Astro.props;
+---
+
+<form class="lf" data-lead={id} novalidate>
+	<h3 class="lf__t">{title}</h3>
+	{subtitle && <p class="lf__s">{subtitle}</p>}
+	<label>
+		<span>Họ và tên *</span>
+		<input type="text" name="fullname" autocomplete="name" placeholder="Nguyễn Văn A" required />
+	</label>
+	<label>
+		<span>Số điện thoại (Zalo) *</span>
+		<input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="09xx xxx xxx" required />
+	</label>
+	<label>
+		<span>Loại căn quan tâm</span>
+		<select name="interest">
+			<option value="Chưa xác định">Cần tư vấn thêm</option>
+			<option value="Studio">Studio · 35 m²</option>
+			<option value="1PN">1 phòng ngủ · 53 m²</option>
+			<option value="2PN">2 phòng ngủ · 69–74 m²</option>
+			<option value="3PN">3 phòng ngủ · 95–120 m²</option>
+			<option value="Khác">Duplex / Sân vườn / Penthouse</option>
+		</select>
+	</label>
+	<input type="text" name="website" tabindex="-1" autocomplete="off" class="lf__hp" aria-hidden="true" />
+	<button type="submit" class="btn btn--gold btn--block">{cta}</button>
+	<p class="lf__msg" role="status"></p>
+	<p class="lf__p">Thông tin của bạn được bảo mật và chỉ dùng để tư vấn dự án.</p>
+</form>
