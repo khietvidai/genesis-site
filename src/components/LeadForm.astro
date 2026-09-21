@@ -1,27 +1,46 @@
 ---
 /** Form thu lead — gửi về Google Sheet (webhook khai báo ở src/config/landing.ts). */
+import { CONTACT } from "../config/landing";
 interface Props {
 	id: string;
 	title: string;
 	subtitle?: string;
 	cta?: string;
+	/** Bản rút gọn (hero): ẩn ô chọn loại căn để form ngắn, dễ điền */
+	compact?: boolean;
 }
-const { id, title, subtitle, cta = "Đăng ký" } = Astro.props;
+const { id, title, subtitle, cta = "Đăng ký", compact = false } = Astro.props;
+const initials = CONTACT.advisor.replace(/^(Ms\.|Mr\.|Mrs\.)\s*/i, "").split(/\s+/).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
+const zaloHref = `https://zalo.me/${CONTACT.zalo}`;
 ---
 
 <form class="lf" data-lead={id} novalidate>
 	<h3 class="lf__t">{title}</h3>
 	{subtitle && <p class="lf__s">{subtitle}</p>}
+
+	<ul class="lf__get">
+		<li>Bảng giá từng căn & mặt bằng tầng</li>
+		<li>Chính sách Đợt 1 & bảng tính dòng tiền</li>
+	</ul>
+
 	<label>
-		<span>Họ và tên *</span>
-		<input type="text" name="fullname" autocomplete="name" placeholder="Nguyễn Văn A" required />
+		<span>Họ và tên</span>
+		<input type="text" name="fullname" autocomplete="name" placeholder="Tên của bạn" required />
 	</label>
 	<label>
-		<span>Số điện thoại (Zalo) *</span>
-		<input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="09xx xxx xxx" required />
+		<span>Số điện thoại</span>
+		<input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="Số di động của bạn" required />
 	</label>
+
+	<fieldset class="lf__pref">
+		<legend>Bạn muốn nhận thông tin qua</legend>
+		<label><input type="radio" name="contact_pref" value="Zalo" checked /><span>Nhắn Zalo trước</span></label>
+		<label><input type="radio" name="contact_pref" value="Gọi điện" /><span>Gọi điện</span></label>
+	</fieldset>
+
+	{compact ? <input type="hidden" name="interest" value="Chưa xác định" /> : (
 	<label>
-		<span>Loại căn quan tâm</span>
+		<span>Loại căn quan tâm <i>(không bắt buộc)</i></span>
 		<select name="interest">
 			<option value="Chưa xác định">Cần tư vấn thêm</option>
 			<option value="Studio">Studio · 35 m²</option>
@@ -31,8 +50,25 @@ const { id, title, subtitle, cta = "Đăng ký" } = Astro.props;
 			<option value="Khác">Duplex / Sân vườn / Penthouse</option>
 		</select>
 	</label>
+	)}
 	<input type="text" name="website" tabindex="-1" autocomplete="off" class="lf__hp" aria-hidden="true" />
 	<button type="submit" class="btn btn--gold btn--block">{cta}</button>
 	<p class="lf__msg" role="status"></p>
-	<p class="lf__p">Thông tin của bạn được bảo mật và chỉ dùng để tư vấn dự án.</p>
+
+	<div class="lf__who">
+		<span class="lf__ava" aria-hidden="true">{initials}</span>
+		<p>
+			<b>{CONTACT.advisor}</b> sẽ trực tiếp gửi thông tin cho bạn
+			<small>Chuyên viên tư vấn · {CONTACT.companyShort} · MST {CONTACT.taxCode}</small>
+		</p>
+	</div>
+	<ul class="lf__trust">
+		<li>Chỉ 1 chuyên viên liên hệ</li>
+		<li>Không gọi làm phiền</li>
+		<li>Không chia sẻ số</li>
+	</ul>
+	<p class="lf__p">
+		Bằng việc gửi, bạn đồng ý để {CONTACT.companyShort} liên hệ tư vấn về TT GENESIS. Bạn có thể yêu cầu xoá thông tin bất cứ lúc nào.
+		<a href={zaloHref} target="_blank" rel="noopener" data-track={`zalo_form_${id}`}>Chưa muốn để lại số? Chat Zalo trực tiếp →</a>
+	</p>
 </form>

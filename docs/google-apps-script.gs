@@ -4,7 +4,7 @@
  */
 const SHEET_NAME = "Leads";
 const NOTIFY_EMAIL = "lunanguyen2626@gmail.com"; // để "" nếu không cần email báo lead mới
-const COLUMNS = ["time", "name", "phone", "interest", "form", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid", "gclid", "ttclid", "page"];
+const COLUMNS = ["time", "name", "phone", "contact_pref", "interest", "form", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid", "gclid", "ttclid", "page"];
 
 function doPost(e) {
   const lock = LockService.getScriptLock();

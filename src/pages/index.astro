@@ -213,6 +213,15 @@ const partners = [
 	{ n: "Vietmax Capital", c: "Singapore", d: "Định chế tài chính chuyên biệt về bất động sản, thành lập bởi Quỹ đầu tư Waymax Singapore." },
 ];
 
+// Logo đối tác: w/h là kích thước file, dh là chiều cao hiển thị (đã cân bằng thị giác giữa các logo)
+const partnerLogos = [
+	{ f: "hinokiya", n: "Hinokiya Group", w: 423, h: 66, dh: 20 },
+	{ f: "cosmos-initia", n: "Cosmos Initia – Daiwa House Group", w: 538, h: 150, dh: 46 },
+	{ f: "tt-capital", n: "TT Capital", w: 314, h: 168, dh: 54 },
+	{ f: "vietmax-capital", n: "Vietmax Capital", w: 488, h: 132, dh: 42 },
+	{ f: "koterasu", n: "Koterasu Partners", w: 436, h: 162, dh: 50 },
+];
+
 const consultants = [
 	["Thiết kế kiến trúc", "TWOG Architecture"],
 	["Thiết kế nội thất", "Vertical Studio"],
@@ -413,7 +422,7 @@ const faqLd = {
 						</div>
 					</div>
 					<div class="hero__form">
-						<LeadForm id="hero" title="Nhận bảng giá Đợt 1" subtitle="Bảng giá, mặt bằng & chính sách mới nhất – chuyên viên gửi qua Zalo ngay khi nhận thông tin." cta="Gửi tôi bảng giá" />
+						<LeadForm id="hero" compact title="Nhận bảng giá Đợt 1" subtitle="Miễn phí, không ràng buộc. Bạn chọn cách nhận – qua Zalo hoặc điện thoại." cta="Gửi tôi bảng giá" />
 					</div>
 				</div>
 			</section>
@@ -667,7 +676,11 @@ const faqLd = {
 						<h2>Kiến tạo các <em>giá trị bền vững</em></h2>
 					</header>
 					<figure class="wide jv"><img src="/img/jv-signing.webp" alt="Lễ ký kết liên doanh phát triển dự án TT GENESIS" width="1400" height="788" loading="lazy" /><figcaption>Lễ ký kết liên doanh Việt Nam – Nhật Bản – Singapore</figcaption></figure>
-					<div class="plogos"><img src="/img/partners.webp" alt="Hinokiya, Cosmos Initia, TT Capital, Vietmax Capital, Koterasu" width="1488" height="90" loading="lazy" /></div>
+					<ul class="plogos" aria-label="Liên doanh đầu tư và phát triển dự án">
+						{partnerLogos.map((l) => (
+							<li><img src={`/img/partners/${l.f}.webp`} alt={l.n} width={l.w} height={l.h} style={`--h:${l.dh}px`} loading="lazy" /></li>
+						))}
+					</ul>
 					<div class="partners">
 						{partners.map((p) => (
 							<article class="partner">
@@ -745,7 +758,7 @@ const faqLd = {
 							<a href={zaloHref} target="_blank" rel="noopener" class="btn btn--ghost btn--lg" data-track="zalo_final">Zalo {CONTACT.advisor}</a>
 						</div>
 					</div>
-					<LeadForm id="final" title="Đăng ký nhận thông tin" subtitle="Tư vấn hoàn toàn miễn phí. Chuyên viên sẽ liên hệ lại sớm nhất." cta="Đăng ký ngay" />
+					<LeadForm id="final" title="Đăng ký nhận thông tin" subtitle="Miễn phí, không ràng buộc. Bạn chọn cách nhận – qua Zalo hoặc điện thoại." cta="Đăng ký ngay" />
 				</div>
 			</section>
 		</main>
@@ -909,6 +922,7 @@ const faqLd = {
 						var data = new URLSearchParams();
 						data.set("name", name); data.set("phone", phone);
 						data.set("interest", form.interest.value);
+						data.set("contact_pref", form.contact_pref.value);
 						data.set("form", form.getAttribute("data-lead"));
 						data.set("page", location.href.split("#")[0]);
 						data.set("time", new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }));
