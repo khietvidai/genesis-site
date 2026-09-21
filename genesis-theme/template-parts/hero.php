@@ -12,6 +12,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 $theme_uri = get_template_directory_uri();
 $zalo_raw  = genesis_get_option( 'genesis_zalo', '0903595058' );
 $zalo_href = 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo_raw );
+
+$eyebrow = genesis_get_option( 'genesis_hero_eyebrow', 'Liên doanh Việt Nam · Nhật Bản · Singapore' );
+$price_k = genesis_get_option( 'genesis_hero_price_k', 'Giá chỉ từ' );
+$price_v = genesis_get_option( 'genesis_hero_price_v', '69' );
+$price_u = genesis_get_option( 'genesis_hero_price_u', 'triệu/m²' );
+$pay_k   = genesis_get_option( 'genesis_hero_pay_k', 'Thanh toán cố định · không vay' );
+$pay_v   = genesis_get_option( 'genesis_hero_pay_v', '29' );
+$pay_u   = genesis_get_option( 'genesis_hero_pay_u', 'triệu/tháng' );
 ?>
 
 <section class="hero">
@@ -21,7 +29,7 @@ $zalo_href = 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo_raw );
 	</picture>
 	<div class="wrap hero__in">
 		<div class="hero__copy">
-			<p class="eyebrow"><?php esc_html_e( 'Liên doanh Việt Nam · Nhật Bản · Singapore', 'genesis-theme' ); ?></p>
+			<p class="eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
 			<h1>
 				<span class="h1__small"><?php esc_html_e( 'Căn hộ', 'genesis-theme' ); ?></span>
 				<?php esc_html_e( 'Tri thức', 'genesis-theme' ); ?> <em><?php esc_html_e( 'Nhật Bản', 'genesis-theme' ); ?></em>
@@ -29,12 +37,12 @@ $zalo_href = 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo_raw );
 			</h1>
 			<div class="hero__price">
 				<div class="pricebox">
-					<span class="pricebox__k"><?php esc_html_e( 'Giá chỉ từ', 'genesis-theme' ); ?></span>
-					<span class="pricebox__v">69<small> <?php esc_html_e( 'triệu/m²', 'genesis-theme' ); ?></small></span>
+					<span class="pricebox__k"><?php echo esc_html( $price_k ); ?></span>
+					<span class="pricebox__v"><?php echo esc_html( $price_v ); ?><small> <?php echo esc_html( $price_u ); ?></small></span>
 				</div>
 				<div class="pricebox">
-					<span class="pricebox__k"><?php esc_html_e( 'Thanh toán cố định · không vay', 'genesis-theme' ); ?></span>
-					<span class="pricebox__v">29<small> <?php esc_html_e( 'triệu/tháng', 'genesis-theme' ); ?></small></span>
+					<span class="pricebox__k"><?php echo esc_html( $pay_k ); ?></span>
+					<span class="pricebox__v"><?php echo esc_html( $pay_v ); ?><small> <?php echo esc_html( $pay_u ); ?></small></span>
 				</div>
 			</div>
 			<ul class="hero__ticks">

@@ -205,5 +205,43 @@ function genesis_customize_register( $wp_customize ) {
 			'type'        => 'text',
 		)
 	);
+
+	// 5. Hero Price & Copy Section
+	$wp_customize->add_section(
+		'genesis_hero_section',
+		array(
+			'title'       => __( 'Tiêu Đề & Giá Bán Hero', 'genesis-theme' ),
+			'panel'       => 'genesis_landing_panel',
+			'priority'    => 50,
+		)
+	);
+
+	$hero_fields = array(
+		'genesis_hero_eyebrow' => array( 'label' => __( 'Giới thiệu nhỏ (Eyebrow)', 'genesis-theme' ), 'default' => 'Liên doanh Việt Nam · Nhật Bản · Singapore' ),
+		'genesis_hero_price_k' => array( 'label' => __( 'Nhãn giá', 'genesis-theme' ), 'default' => 'Giá chỉ từ' ),
+		'genesis_hero_price_v' => array( 'label' => __( 'Số giá', 'genesis-theme' ), 'default' => '69' ),
+		'genesis_hero_price_u' => array( 'label' => __( 'Đơn vị giá', 'genesis-theme' ), 'default' => 'triệu/m²' ),
+		'genesis_hero_pay_k'   => array( 'label' => __( 'Nhãn thanh toán', 'genesis-theme' ), 'default' => 'Thanh toán cố định · không vay' ),
+		'genesis_hero_pay_v'   => array( 'label' => __( 'Số thanh toán', 'genesis-theme' ), 'default' => '29' ),
+		'genesis_hero_pay_u'   => array( 'label' => __( 'Đơn vị thanh toán', 'genesis-theme' ), 'default' => 'triệu/tháng' ),
+	);
+
+	foreach ( $hero_fields as $key => $args ) {
+		$wp_customize->add_setting(
+			$key,
+			array(
+				'default'           => $args['default'],
+				'sanitize_callback' => 'sanitize_text_field',
+			)
+		);
+		$wp_customize->add_control(
+			$key,
+			array(
+				'label'   => $args['label'],
+				'section' => 'genesis_hero_section',
+				'type'    => 'text',
+			)
+		);
+	}
 }
 add_action( 'customize_register', 'genesis_customize_register' );

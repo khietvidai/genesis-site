@@ -35,6 +35,15 @@ function genesis_get_option( $key, $default = '' ) {
 		'genesis_meta_pixel_id'      => '',
 		'genesis_tiktok_pixel_id'    => '',
 		'genesis_countdown_deadline' => '2026-10-06T23:59:59+07:00',
+		'genesis_hero_eyebrow'       => 'Liên doanh Việt Nam · Nhật Bản · Singapore',
+		'genesis_hero_title'         => 'Căn hộ Tri thức Nhật Bản',
+		'genesis_hero_sub'           => 'tại Nam Sài Gòn – liền kề Phú Mỹ Hưng',
+		'genesis_hero_price_k'       => 'Giá chỉ từ',
+		'genesis_hero_price_v'       => '69',
+		'genesis_hero_price_u'       => 'triệu/m²',
+		'genesis_hero_pay_k'         => 'Thanh toán cố định · không vay',
+		'genesis_hero_pay_v'         => '29',
+		'genesis_hero_pay_u'         => 'triệu/tháng',
 	);
 
 	if ( empty( $default ) && isset( $defaults[ $key ] ) ) {
