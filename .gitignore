@@ -12,6 +12,9 @@ data.db
 .dev.vars
 .dev.vars.*
 
+# WordPress theme package
+genesis-theme.zip
+
 # Tài liệu gốc dự án (nặng, nội bộ) & file tạm
 OneDrive_*/
 _preview/
