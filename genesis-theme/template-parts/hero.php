@@ -1,0 +1,66 @@
+<?php
+/**
+ * Template Part: Hero Section
+ *
+ * @package Genesis_Theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+$theme_uri = get_template_directory_uri();
+$zalo_raw  = genesis_get_option( 'genesis_zalo', '0903595058' );
+$zalo_href = 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo_raw );
+?>
+
+<section class="hero">
+	<picture class="hero__bg">
+		<source media="(max-width: 767px)" srcset="<?php echo esc_url( $theme_uri . '/assets/img/hero-m.webp' ); ?>" />
+		<img src="<?php echo esc_url( $theme_uri . '/assets/img/hero.webp' ); ?>" alt="<?php esc_attr_e( 'Phối cảnh hai tháp Maris và Lucis của TT GENESIS bên sông lúc hoàng hôn', 'genesis-theme' ); ?>" width="2000" height="968" fetchpriority="high" />
+	</picture>
+	<div class="wrap hero__in">
+		<div class="hero__copy">
+			<p class="eyebrow"><?php esc_html_e( 'Liên doanh Việt Nam · Nhật Bản · Singapore', 'genesis-theme' ); ?></p>
+			<h1>
+				<span class="h1__small"><?php esc_html_e( 'Căn hộ', 'genesis-theme' ); ?></span>
+				<?php esc_html_e( 'Tri thức', 'genesis-theme' ); ?> <em><?php esc_html_e( 'Nhật Bản', 'genesis-theme' ); ?></em>
+				<span class="h1__sub"><?php esc_html_e( 'tại Nam Sài Gòn – liền kề Phú Mỹ Hưng', 'genesis-theme' ); ?></span>
+			</h1>
+			<div class="hero__price">
+				<div class="pricebox">
+					<span class="pricebox__k"><?php esc_html_e( 'Giá chỉ từ', 'genesis-theme' ); ?></span>
+					<span class="pricebox__v">69<small> <?php esc_html_e( 'triệu/m²', 'genesis-theme' ); ?></small></span>
+				</div>
+				<div class="pricebox">
+					<span class="pricebox__k"><?php esc_html_e( 'Thanh toán cố định · không vay', 'genesis-theme' ); ?></span>
+					<span class="pricebox__v">29<small> <?php esc_html_e( 'triệu/tháng', 'genesis-theme' ); ?></small></span>
+				</div>
+			</div>
+			<ul class="hero__ticks">
+				<li><?php esc_html_e( '88 tiện ích Compound Resort trên 1,9 ha', 'genesis-theme' ); ?></li>
+				<li><?php esc_html_e( 'Sổ hồng sở hữu lâu dài · VPBank bảo lãnh', 'genesis-theme' ); ?></li>
+				<li><?php esc_html_e( 'Chiết khấu 1% khi giữ chỗ trước 06/10/2026', 'genesis-theme' ); ?></li>
+			</ul>
+			<div class="hero__cta">
+				<a href="#dang-ky" class="btn btn--gold btn--lg" data-track="cta_hero"><?php esc_html_e( 'Nhận bảng giá & chính sách', 'genesis-theme' ); ?></a>
+				<a href="<?php echo esc_url( $zalo_href ); ?>" target="_blank" rel="noopener" class="btn btn--ghost btn--lg" data-track="zalo_hero"><?php esc_html_e( 'Chat Zalo tư vấn', 'genesis-theme' ); ?></a>
+			</div>
+		</div>
+		<div class="hero__form">
+			<?php
+			get_template_part(
+				'template-parts/form-lead',
+				null,
+				array(
+					'id'       => 'hero',
+					'compact'  => true,
+					'title'    => __( 'Nhận bảng giá Đợt 1', 'genesis-theme' ),
+					'subtitle' => __( 'Miễn phí, không ràng buộc. Bạn chọn cách nhận – qua Zalo hoặc điện thoại.', 'genesis-theme' ),
+					'cta'      => __( 'Gửi tôi bảng giá', 'genesis-theme' ),
+				)
+			);
+			?>
+		</div>
+	</div>
+</section>
