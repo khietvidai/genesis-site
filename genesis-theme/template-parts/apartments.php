@@ -18,7 +18,7 @@ $plans = array(
 	array( 'id' => '2br-corner', 'tab' => '2PN Corner', 'name' => '2 phòng ngủ · 2WC · LUMINA Corner', 'img' => 'plan-2br-corner', 'tt' => '71,92 m²', 'lt' => '66,77 m²', 'note' => __( 'Căn góc 2 mặt thoáng', 'genesis-theme' ) ),
 	array( 'id' => '2br-plus', 'tab' => '2PN Plus', 'name' => '2 phòng ngủ · 2WC · LUMINA Plus', 'img' => 'plan-2br-plus', 'tt' => '73,96 m²', 'lt' => '68,34 m²', 'note' => __( 'Rộng rãi cho gia đình trẻ', 'genesis-theme' ) ),
 	array( 'id' => '3br-basic', 'tab' => '3PN Basic', 'name' => '3 phòng ngủ · 2WC · TIDAL Basic', 'img' => 'plan-3br-basic', 'tt' => '94,55 m²', 'lt' => '88,83 m²', 'note' => __( 'Không gian đa thế hệ', 'genesis-theme' ) ),
-	array( 'id' => '3br-plus', 'tab' => '3PN Plus', 'name' => '3 phòng ngủ · 2WC · TIDAL Plus', 'img' => 'plan-3br-plus', 'tt' => '119,57 m²', 'lt' => '113,16 m²', 'note' => __( 'Căn lớn nhất dòng căn hộ điển hình', 'genesis-theme' ) ),
+	array( 'id' => '3br-plus', 'tab' => '3PN Plus', 'name' => '3 phòng ngủ · 2WC · TIDAL Plus', 'img' => 'plan-3br-plus', 'tt' => '119,57 m²', 'lt' => '113,16 m²', 'note' => __( 'Không gian rộng rãi cho gia đình đa thế hệ', 'genesis-theme' ) ),
 );
 ?>
 

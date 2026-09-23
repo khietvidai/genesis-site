@@ -95,6 +95,7 @@ $initials = mb_strtoupper( $initials, 'UTF-8' );
 	</ul>
 	<p class="lf__p">
 		<?php printf( esc_html__( 'Bằng việc gửi, bạn đồng ý để %s liên hệ tư vấn về TT GENESIS. Bạn có thể yêu cầu xoá thông tin bất cứ lúc nào.', 'genesis-theme' ), esc_html( $company_short ) ); ?>
+		<?php if ( get_privacy_policy_url() ) : ?><a class="lf__pp" href="<?php echo esc_url( get_privacy_policy_url() ); ?>" target="_blank"><?php esc_html_e( 'Chính sách bảo mật', 'genesis-theme' ); ?></a><?php endif; ?>
 		<a href="<?php echo esc_url( $zalo_href ); ?>" target="_blank" rel="noopener" data-track="zalo_form_<?php echo $form_id; ?>"><?php esc_html_e( 'Chưa muốn để lại số? Chat Zalo trực tiếp →', 'genesis-theme' ); ?></a>
 	</p>
 </form>

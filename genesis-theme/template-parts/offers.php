@@ -16,7 +16,8 @@ $offers = array(
 		'big'   => '1%',
 		'title' => __( 'Chiết khấu giữ chỗ sớm', 'genesis-theme' ),
 		'text'  => __( 'Áp dụng cho khách hàng có giữ chỗ đến hết ngày 06/10/2026.', 'genesis-theme' ),
-		'tag'   => __( 'Sắp hết hạn', 'genesis-theme' ),
+		'tag'   => __( 'Đến 06/10/2026', 'genesis-theme' ),
+		'expires' => true,
 	),
 	array(
 		'big'   => '29 triệu',
@@ -53,7 +54,7 @@ $offers = array(
 		<header class="sec__hd">
 			<p class="eyebrow"><?php esc_html_e( 'Chính sách bán hàng Đợt 1', 'genesis-theme' ); ?></p>
 			<h2><?php esc_html_e( 'Ưu đãi dành cho', 'genesis-theme' ); ?> <em><?php esc_html_e( 'khách hàng tiên phong', 'genesis-theme' ); ?></em></h2>
-			<p class="lead"><?php esc_html_e( 'Giai đoạn mở bán đầu tiên luôn có mức giá và chính sách tốt nhất. Ưu đãi giữ chỗ sớm kết thúc sau:', 'genesis-theme' ); ?></p>
+			<p class="lead"><?php esc_html_e( 'Chính sách bán hàng Đợt 1 do chủ đầu tư ban hành. Ưu đãi chiết khấu 1% cho khách đăng ký sớm kết thúc sau:', 'genesis-theme' ); ?></p>
 			<div class="countdown" data-deadline="<?php echo esc_attr( $deadline ); ?>" aria-live="off">
 				<div><b data-cd="d">--</b><span><?php esc_html_e( 'ngày', 'genesis-theme' ); ?></span></div>
 				<div><b data-cd="h">--</b><span><?php esc_html_e( 'giờ', 'genesis-theme' ); ?></span></div>
@@ -63,7 +64,7 @@ $offers = array(
 		</header>
 		<div class="offers">
 			<?php foreach ( $offers as $o ) : ?>
-				<article class="offer">
+				<article class="offer"<?php echo ! empty( $o['expires'] ) ? ' data-expires="' . esc_attr( $deadline ) . '"' : ''; ?>>
 					<?php if ( ! empty( $o['tag'] ) ) : ?>
 						<span class="offer__tag"><?php echo esc_html( $o['tag'] ); ?></span>
 					<?php endif; ?>
@@ -80,7 +81,7 @@ $offers = array(
 		</div>
 		<p class="fine"><?php esc_html_e( '(*) Chi tiết theo thông báo chính sách bán hàng do chủ đầu tư ban hành tại từng thời điểm. Các chính sách có thể không áp dụng đồng thời.', 'genesis-theme' ); ?></p>
 		<div class="center">
-			<a href="#dang-ky" class="btn btn--gold btn--lg" data-track="cta_offers"><?php esc_html_e( 'Giữ chỗ ưu tiên – nhận chiết khấu 1%', 'genesis-theme' ); ?></a>
+			<a href="#dang-ky" class="btn btn--gold btn--lg" data-track="cta_offers"><?php esc_html_e( 'Nhận chi tiết chính sách Đợt 1', 'genesis-theme' ); ?></a>
 		</div>
 	</div>
 </section>

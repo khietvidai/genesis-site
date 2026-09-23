@@ -64,6 +64,11 @@
 		onScroll();
 	}
 
+	/* ---- tự ẩn ưu đãi đã hết hạn (tránh vi phạm "ưu đãi không còn hiệu lực" của Google Ads) ---- */
+	var genesisNow = Date.now();
+	$('[data-expires]').forEach(function (el) { var t = Date.parse(el.getAttribute('data-expires')); if (t && genesisNow > t) el.hidden = true; });
+	$('[data-show-after]').forEach(function (el) { var t = Date.parse(el.getAttribute('data-show-after')); if (t && genesisNow > t) el.hidden = false; });
+
 	/* ---- countdown timer ---- */
 	$('.countdown').forEach(function (el) {
 		var deadlineAttr = el.getAttribute('data-deadline') || (window.genesis_data && window.genesis_data.deadline);

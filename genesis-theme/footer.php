@@ -58,7 +58,7 @@ $address       = genesis_get_option( 'genesis_address', '427 Đường Số 1, P
 			?>
 		</p>
 		<p><?php esc_html_e( 'Thông tin cá nhân bạn cung cấp chỉ được dùng để tư vấn về dự án TT GENESIS và không chia sẻ cho bên thứ ba.', 'genesis-theme' ); ?></p>
-		<p>© <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company_short ); ?>.</p>
+		<p><?php if ( get_privacy_policy_url() ) : ?><a href="<?php echo esc_url( get_privacy_policy_url() ); ?>"><?php esc_html_e( 'Chính sách bảo mật thông tin', 'genesis-theme' ); ?></a> · <?php endif; ?>© <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company_short ); ?>.</p>
 	</div>
 </footer>
 

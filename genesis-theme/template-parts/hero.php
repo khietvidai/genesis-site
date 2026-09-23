@@ -48,7 +48,9 @@ $pay_u   = genesis_get_option( 'genesis_hero_pay_u', 'triệu/tháng' );
 			<ul class="hero__ticks">
 				<li><?php esc_html_e( '88 tiện ích Compound Resort trên 1,9 ha', 'genesis-theme' ); ?></li>
 				<li><?php esc_html_e( 'Sổ hồng sở hữu lâu dài · VPBank bảo lãnh', 'genesis-theme' ); ?></li>
-				<li><?php esc_html_e( 'Chiết khấu 1% khi giữ chỗ trước 06/10/2026', 'genesis-theme' ); ?></li>
+				<?php $genesis_deadline = genesis_get_option( 'genesis_countdown_deadline', '2026-10-06T23:59:59+07:00' ); ?>
+				<li data-expires="<?php echo esc_attr( $genesis_deadline ); ?>"><?php esc_html_e( 'Chiết khấu 1% cho khách đăng ký sớm đến 06/10/2026 (*)', 'genesis-theme' ); ?></li>
+				<li data-show-after="<?php echo esc_attr( $genesis_deadline ); ?>" hidden><?php esc_html_e( 'Chính sách thanh toán linh hoạt, đến 8% chiết khấu', 'genesis-theme' ); ?></li>
 			</ul>
 			<div class="hero__cta">
 				<a href="#dang-ky" class="btn btn--gold btn--lg" data-track="cta_hero"><?php esc_html_e( 'Nhận bảng giá & chính sách', 'genesis-theme' ); ?></a>

@@ -23,7 +23,7 @@ $tel_href      = 'tel:' . preg_replace( '/\D/', '', $phone );
 	<div class="wrap final__in">
 		<div class="final__copy">
 			<p class="eyebrow"><?php esc_html_e( 'Đăng ký tư vấn 1:1', 'genesis-theme' ); ?></p>
-			<h2><?php esc_html_e( 'Nhận bảng giá, mặt bằng &', 'genesis-theme' ); ?> <em><?php esc_html_e( 'suất giữ chỗ ưu tiên', 'genesis-theme' ); ?></em></h2>
+			<h2><?php esc_html_e( 'Nhận bảng giá, mặt bằng &', 'genesis-theme' ); ?> <em><?php esc_html_e( 'chính sách Đợt 1', 'genesis-theme' ); ?></em></h2>
 			<ul class="ticks ticks--light">
 				<li><?php esc_html_e( 'Bảng giá chi tiết từng căn – cập nhật trong ngày', 'genesis-theme' ); ?></li>
 				<li><?php esc_html_e( 'Bảng tính dòng tiền theo phương thức bạn chọn', 'genesis-theme' ); ?></li>
