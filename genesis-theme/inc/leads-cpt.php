@@ -558,7 +558,7 @@ function genesis_render_campaign_settings_page() {
 		$saved = true;
 	}
 
-	$advisor       = genesis_get_option( 'genesis_advisor_name', 'PkD TT Genesis' );
+	$advisor       = genesis_get_option( 'genesis_advisor_name', 'Phòng Kinh doanh Luna Holdings' );
 	$phone         = genesis_get_option( 'genesis_phone', '0938912908' );
 	$phone_display = genesis_get_option( 'genesis_phone_display', '0938.912.908' );
 	$zalo          = genesis_get_option( 'genesis_zalo', '0938912908' );
@@ -610,7 +610,7 @@ function genesis_render_campaign_settings_page() {
 							<th scope="row"><label for="genesis_advisor_name"><?php esc_html_e( 'Tên chuyên viên tư vấn', 'genesis-theme' ); ?></label></th>
 							<td>
 								<input type="text" name="genesis_advisor_name" id="genesis_advisor_name" value="<?php echo esc_attr( $advisor ); ?>" class="regular-text" />
-								<p class="description"><?php esc_html_e( 'Hiển thị trên form, avatar và nút Zalo (ví dụ: PkD TT Genesis, Mr. Tuấn BĐS...).', 'genesis-theme' ); ?></p>
+								<p class="description"><?php esc_html_e( 'Hiển thị trên form, avatar và nút Zalo (dùng tên đơn vị tư vấn, ví dụ: Phòng Kinh doanh Luna Holdings. Không dùng tên gợi ý là chủ đầu tư hay phòng kinh doanh của chủ đầu tư).', 'genesis-theme' ); ?></p>
 							</td>
 						</tr>
 						<tr>

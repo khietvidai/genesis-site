@@ -93,7 +93,7 @@ git commit -m "feat(theme): scaffold base theme files and assets"
 - [ ] **Step 1: Create `genesis-theme/inc/customizer.php`**
 
 Write `genesis-theme/inc/customizer.php` defining the settings panel and options:
-- `genesis_advisor_name` (default: "PkD TT Genesis")
+- `genesis_advisor_name` (default: "Phòng Kinh doanh Luna Holdings")
 - `genesis_phone` (default: "0938912908")
 - `genesis_phone_display` (default: "0938.912.908")
 - `genesis_zalo` (default: "0938912908")

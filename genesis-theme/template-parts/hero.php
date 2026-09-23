@@ -45,6 +45,7 @@ $pay_u   = genesis_get_option( 'genesis_hero_pay_u', 'triệu/tháng' );
 					<span class="pricebox__v"><?php echo esc_html( $pay_v ); ?><small> <?php echo esc_html( $pay_u ); ?></small></span>
 				</div>
 			</div>
+			<p class="hero__note"><?php esc_html_e( 'Đơn giá theo phương thức thanh toán chuẩn, diện tích tim tường, chưa gồm VAT. Thanh toán cố định áp dụng theo phương thức “Dễ sở hữu 2”.', 'genesis-theme' ); ?></p>
 			<ul class="hero__ticks">
 				<li><?php esc_html_e( '88 tiện ích Compound Resort trên 1,9 ha', 'genesis-theme' ); ?></li>
 				<li><?php esc_html_e( 'Sổ hồng sở hữu lâu dài · VPBank bảo lãnh', 'genesis-theme' ); ?></li>

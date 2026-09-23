@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $theme_uri     = get_template_directory_uri();
 $phone         = genesis_get_option( 'genesis_phone', '0938912908' );
 $phone_display = genesis_get_option( 'genesis_phone_display', '0938.912.908' );
-$advisor       = genesis_get_option( 'genesis_advisor_name', 'PkD TT Genesis' );
+$advisor       = genesis_get_option( 'genesis_advisor_name', 'Phòng Kinh doanh Luna Holdings' );
 $zalo_raw      = genesis_get_option( 'genesis_zalo', '0938912908' );
 $zalo_href     = 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo_raw );
 $tel_href      = 'tel:' . preg_replace( '/\D/', '', $phone );
@@ -34,7 +34,7 @@ $tel_href      = 'tel:' . preg_replace( '/\D/', '', $phone );
 					<?php printf( esc_html__( 'Gọi %s', 'genesis-theme' ), esc_html( $phone_display ) ); ?>
 				</a>
 				<a href="<?php echo esc_url( $zalo_href ); ?>" target="_blank" rel="noopener" class="btn btn--ghost btn--lg" data-track="zalo_final">
-					<?php printf( esc_html__( 'Zalo %s', 'genesis-theme' ), esc_html( $advisor ) ); ?>
+					<?php esc_html_e( 'Chat Zalo tư vấn', 'genesis-theme' ); ?>
 				</a>
 			</div>
 		</div>

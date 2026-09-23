@@ -432,3 +432,4 @@ h3 { font-size: 18px; font-weight: 600; line-height: 1.35; }
 .doc .meta { font-size: 13.5px; color: #7a8193; }
 .doc a { color: var(--amber); }
 .hd--solid { background: rgba(14, 22, 38, 0.96); }
+.hero__note { margin-top: 10px; font-size: 12px; color: rgba(255, 255, 255, 0.72); max-width: 560px; line-height: 1.5; }

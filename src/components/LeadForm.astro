@@ -10,7 +10,7 @@ interface Props {
 	compact?: boolean;
 }
 const { id, title, subtitle, cta = "Đăng ký", compact = false } = Astro.props;
-const initials = CONTACT.advisor.replace(/^(Ms\.|Mr\.|Mrs\.)\s*/i, "").split(/\s+/).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
+const initials = (CONTACT as { advisorInitials?: string }).advisorInitials || CONTACT.advisor.replace(/^(Ms\.|Mr\.|Mrs\.)\s*/i, "").split(/\s+/).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
 const zaloHref = `https://zalo.me/${CONTACT.zalo}`;
 ---
 

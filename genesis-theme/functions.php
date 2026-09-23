@@ -20,7 +20,7 @@ define( 'GENESIS_VERSION', '1.0.0' );
  */
 function genesis_get_option( $key, $default = '' ) {
 	$defaults = array(
-		'genesis_advisor_name'       => 'PkD TT Genesis',
+		'genesis_advisor_name'       => 'Phòng Kinh doanh Luna Holdings',
 		'genesis_phone'              => '0938912908',
 		'genesis_phone_display'      => '0938.912.908',
 		'genesis_zalo'               => '0938912908',
@@ -113,7 +113,7 @@ function genesis_scripts() {
 			'nonce'       => wp_create_nonce( 'genesis_lead_nonce' ),
 			'webhook_url' => genesis_get_option( 'genesis_webhook_url', '' ),
 			'zalo_href'   => 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo ),
-			'advisor'     => genesis_get_option( 'genesis_advisor_name', 'PkD TT Genesis' ),
+			'advisor'     => genesis_get_option( 'genesis_advisor_name', 'Phòng Kinh doanh Luna Holdings' ),
 			'deadline'    => genesis_get_option( 'genesis_countdown_deadline', '2026-10-06T23:59:59+07:00' ),
 		)
 	);
@@ -124,3 +124,4 @@ add_action( 'wp_enqueue_scripts', 'genesis_scripts' );
 require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/leads-cpt.php';
 require_once get_template_directory() . '/inc/lead-handler.php';
+require_once get_template_directory() . '/inc/privacy-page.php';

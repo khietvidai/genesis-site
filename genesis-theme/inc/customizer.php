@@ -39,7 +39,7 @@ function genesis_customize_register( $wp_customize ) {
 	$contact_fields = array(
 		'genesis_advisor_name'  => array(
 			'label'   => __( 'Tên chuyên viên tư vấn', 'genesis-theme' ),
-			'default' => 'PkD TT Genesis',
+			'default' => 'Phòng Kinh doanh Luna Holdings',
 			'type'    => 'text',
 		),
 		'genesis_phone'         => array(

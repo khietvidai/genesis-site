@@ -41,7 +41,8 @@ Theme WordPress độc lập chuyên dụng cho Landing Page Bất Động Sản
 ### Bước 2: Chỉnh Sửa Thông Tin Để Chạy Ads
 Sau khi kích hoạt, vào menu **Khách hàng (Leads) > ⚙️ Cài đặt Ads & Hotline**:
 1. **Hotline & Zalo**: Nhập số điện thoại của bạn hoặc tổng đài (ví dụ: `0938912908`).
-2. **Tên chuyên viên**: Nhập tên bạn muốn hiển thị trên form và avatar (ví dụ: `PkD TT Genesis`).
+2. **Tên chuyên viên**: Nhập tên bạn muốn hiển thị trên form và avatar (ví dụ: `Phòng Kinh doanh Luna Holdings`). ⚠️ Không dùng tên gợi ý là chủ đầu tư hoặc phòng kinh doanh của chủ đầu tư (ví dụ “PkD TT Genesis”) – Google Ads có thể đánh giá là trình bày sai danh tính doanh nghiệp.
+   Trước khi chạy ads thật, xoá các Lead mẫu (nhãn “Sample”) để số liệu không bị lẫn.
 3. **Mã Pixel**: Dán Meta Pixel ID, TikTok Pixel ID hoặc Google Ads / GA4 ID của chiến dịch.
 4. **Google Sheets Webhook**: Dán link Web App Google Sheets nếu muốn đồng bộ về Sheet riêng. *(Nếu để trống, khách gửi form sẽ được lưu trong WP Admin và tự động mở Zalo của bạn)*.
 5. Bấm **"💾 Lưu Cài Đặt Chiến Dịch"** &mdash; Website đã sẵn sàng chạy ads!

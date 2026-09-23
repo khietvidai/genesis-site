@@ -6,8 +6,14 @@
  */
 
 export const CONTACT = {
-	/** Tên người tư vấn hiển thị trên nút gọi / form */
-	advisor: "PkD TT Genesis",
+	/**
+	 * Tên người/bộ phận tư vấn hiển thị trên form & footer.
+	 * ⚠️ Không dùng tên gợi ý là chủ đầu tư hoặc phòng kinh doanh của CĐT (vd "PkD TT Genesis")
+	 * – Google Ads có thể đánh giá là trình bày sai danh tính doanh nghiệp.
+	 */
+	advisor: "Phòng Kinh doanh Luna Holdings",
+	/** Chữ viết tắt trên avatar ở form */
+	advisorInitials: "LH",
 	/** Số hotline (chỉ chữ số) */
 	phone: "0938912908",
 	/** Số hiển thị */

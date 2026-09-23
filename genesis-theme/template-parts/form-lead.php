@@ -17,14 +17,17 @@ $subtitle = isset( $args['subtitle'] ) ? esc_html( $args['subtitle'] ) : '';
 $cta      = isset( $args['cta'] ) ? esc_html( $args['cta'] ) : __( 'Đăng ký ngay', 'genesis-theme' );
 $compact  = ! empty( $args['compact'] );
 
-$advisor       = genesis_get_option( 'genesis_advisor_name', 'PkD TT Genesis' );
+$advisor       = genesis_get_option( 'genesis_advisor_name', 'Phòng Kinh doanh Luna Holdings' );
 $company_short = genesis_get_option( 'genesis_company_short', 'Luna Holdings' );
 $tax_code      = genesis_get_option( 'genesis_tax_code', '0318925374' );
 $zalo_raw      = genesis_get_option( 'genesis_zalo', '0938912908' );
 $zalo_href     = 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo_raw );
 
-// Calculate initials for avatar
+// Calculate initials for avatar (tên phòng ban -> lấy chữ cái đầu của tên công ty)
 $clean_name = preg_replace( '/^(Ms\.|Mr\.|Mrs\.)\s*/i', '', $advisor );
+if ( preg_match( '/^Phòng\b/iu', $clean_name ) ) {
+	$clean_name = $company_short;
+}
 $words      = preg_split( '/\s+/', trim( $clean_name ) );
 $initials   = '';
 if ( ! empty( $words ) ) {
