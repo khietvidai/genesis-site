@@ -49,7 +49,7 @@ Write `genesis-theme/style.css`:
 Theme Name: TT GENESIS Landing Page
 Theme URI: https://khietvidai.github.io/genesis-site
 Author: Luna Holdings / khietvidai
-Author URI: https://zalo.me/0903595058
+Author URI: https://zalo.me/0938912908
 Description: Giao diện Landing Page bất động sản cao cấp TT GENESIS Nam Sài Gòn. Tối ưu tốc độ tải trang, chuẩn SEO, tích hợp sẵn quản lý khách hàng tiềm năng (Leads CRM) và tùy biến Customizer.
 Version: 1.0.0
 Requires at least: 5.8
@@ -93,11 +93,11 @@ git commit -m "feat(theme): scaffold base theme files and assets"
 - [ ] **Step 1: Create `genesis-theme/inc/customizer.php`**
 
 Write `genesis-theme/inc/customizer.php` defining the settings panel and options:
-- `genesis_advisor_name` (default: "Ms. Kim Thuý")
-- `genesis_phone` (default: "0903595058")
-- `genesis_phone_display` (default: "0903 595 058")
-- `genesis_zalo` (default: "0903595058")
-- `genesis_email` (default: "lunanguyen2626@gmail.com")
+- `genesis_advisor_name` (default: "PkD TT Genesis")
+- `genesis_phone` (default: "0938912908")
+- `genesis_phone_display` (default: "0938.912.908")
+- `genesis_zalo` (default: "0938912908")
+- `genesis_email` (default: "office@lunaholdingsvn.com")
 - `genesis_company_name` (default: "CÔNG TY CP KINH DOANH BẤT ĐỘNG SẢN LUNA HOLDINGS")
 - `genesis_company_short` (default: "Luna Holdings")
 - `genesis_tax_code` (default: "0318925374")

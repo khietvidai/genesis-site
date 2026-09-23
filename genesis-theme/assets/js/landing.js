@@ -164,7 +164,7 @@
 		ajax_url: '/wp-admin/admin-ajax.php',
 		nonce: '',
 		webhook_url: '',
-		zalo_href: 'https://zalo.me/0903595058',
+		zalo_href: 'https://zalo.me/0938912908',
 	};
 
 	$('form[data-lead]').forEach(function (form) {

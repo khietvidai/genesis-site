@@ -10,10 +10,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $theme_uri     = get_template_directory_uri();
-$phone         = genesis_get_option( 'genesis_phone', '0903595058' );
-$phone_display = genesis_get_option( 'genesis_phone_display', '0903 595 058' );
-$advisor       = genesis_get_option( 'genesis_advisor_name', 'Ms. Kim Thuý' );
-$zalo_raw      = genesis_get_option( 'genesis_zalo', '0903595058' );
+$phone         = genesis_get_option( 'genesis_phone', '0938912908' );
+$phone_display = genesis_get_option( 'genesis_phone_display', '0938.912.908' );
+$advisor       = genesis_get_option( 'genesis_advisor_name', 'PkD TT Genesis' );
+$zalo_raw      = genesis_get_option( 'genesis_zalo', '0938912908' );
 $zalo_href     = 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo_raw );
 $tel_href      = 'tel:' . preg_replace( '/\D/', '', $phone );
 ?>

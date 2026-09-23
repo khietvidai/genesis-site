@@ -89,11 +89,11 @@ genesis-theme/
 ## 5. Bảng Cài Đặt Tùy Biến (WordPress Customizer)
 Thêm Panel **"Cài đặt TT GENESIS Landing Page"** trong `Giao diện > Tùy biến`:
 - **Thông tin Bán hàng & Chuyên viên**:
-  - `genesis_advisor_name` (Mặc định: `Ms. Kim Thuý`)
-  - `genesis_phone` (Mặc định: `0903595058`)
-  - `genesis_phone_display` (Mặc định: `0903 595 058`)
-  - `genesis_zalo` (Mặc định: `0903595058`)
-  - `genesis_email` (Mặc định: `lunanguyen2626@gmail.com`)
+  - `genesis_advisor_name` (Mặc định: `PkD TT Genesis`)
+  - `genesis_phone` (Mặc định: `0938912908`)
+  - `genesis_phone_display` (Mặc định: `0938.912.908`)
+  - `genesis_zalo` (Mặc định: `0938912908`)
+  - `genesis_email` (Mặc định: `office@lunaholdingsvn.com`)
   - `genesis_company_name` (Mặc định: `CÔNG TY CP KINH DOANH BẤT ĐỘNG SẢN LUNA HOLDINGS`)
   - `genesis_company_short` (Mặc định: `Luna Holdings`)
   - `genesis_tax_code` (Mặc định: `0318925374`)

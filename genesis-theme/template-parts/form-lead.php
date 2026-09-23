@@ -17,10 +17,10 @@ $subtitle = isset( $args['subtitle'] ) ? esc_html( $args['subtitle'] ) : '';
 $cta      = isset( $args['cta'] ) ? esc_html( $args['cta'] ) : __( 'Đăng ký ngay', 'genesis-theme' );
 $compact  = ! empty( $args['compact'] );
 
-$advisor       = genesis_get_option( 'genesis_advisor_name', 'Ms. Kim Thuý' );
+$advisor       = genesis_get_option( 'genesis_advisor_name', 'PkD TT Genesis' );
 $company_short = genesis_get_option( 'genesis_company_short', 'Luna Holdings' );
 $tax_code      = genesis_get_option( 'genesis_tax_code', '0318925374' );
-$zalo_raw      = genesis_get_option( 'genesis_zalo', '0903595058' );
+$zalo_raw      = genesis_get_option( 'genesis_zalo', '0938912908' );
 $zalo_href     = 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo_raw );
 
 // Calculate initials for avatar

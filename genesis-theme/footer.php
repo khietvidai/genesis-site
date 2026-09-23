@@ -10,13 +10,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $theme_uri     = get_template_directory_uri();
-$phone         = genesis_get_option( 'genesis_phone', '0903595058' );
-$phone_display = genesis_get_option( 'genesis_phone_display', '0903 595 058' );
+$phone         = genesis_get_option( 'genesis_phone', '0938912908' );
+$phone_display = genesis_get_option( 'genesis_phone_display', '0938.912.908' );
 $tel_href      = 'tel:' . preg_replace( '/\D/', '', $phone );
-$zalo_raw      = genesis_get_option( 'genesis_zalo', '0903595058' );
+$zalo_raw      = genesis_get_option( 'genesis_zalo', '0938912908' );
 $zalo_href     = 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo_raw );
-$advisor       = genesis_get_option( 'genesis_advisor_name', 'Ms. Kim Thuý' );
-$email         = genesis_get_option( 'genesis_email', 'lunanguyen2626@gmail.com' );
+$advisor       = genesis_get_option( 'genesis_advisor_name', 'PkD TT Genesis' );
+$email         = genesis_get_option( 'genesis_email', 'office@lunaholdingsvn.com' );
 $company       = genesis_get_option( 'genesis_company_name', 'CÔNG TY CP KINH DOANH BẤT ĐỘNG SẢN LUNA HOLDINGS' );
 $company_short = genesis_get_option( 'genesis_company_short', 'Luna Holdings' );
 $tax_code      = genesis_get_option( 'genesis_tax_code', '0318925374' );

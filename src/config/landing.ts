@@ -7,14 +7,14 @@
 
 export const CONTACT = {
 	/** Tên người tư vấn hiển thị trên nút gọi / form */
-	advisor: "Ms. Kim Thuý",
+	advisor: "PkD TT Genesis",
 	/** Số hotline (chỉ chữ số) */
-	phone: "0903595058",
+	phone: "0938912908",
 	/** Số hiển thị */
-	phoneDisplay: "0903 595 058",
+	phoneDisplay: "0938.912.908",
 	/** Số Zalo (thường trùng hotline) */
-	zalo: "0903595058",
-	email: "lunanguyen2626@gmail.com",
+	zalo: "0938912908",
+	email: "office@lunaholdingsvn.com",
 	company: "CÔNG TY CP KINH DOANH BẤT ĐỘNG SẢN LUNA HOLDINGS",
 	companyShort: "Luna Holdings",
 	taxCode: "0318925374",

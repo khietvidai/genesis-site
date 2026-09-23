@@ -20,11 +20,11 @@ define( 'GENESIS_VERSION', '1.0.0' );
  */
 function genesis_get_option( $key, $default = '' ) {
 	$defaults = array(
-		'genesis_advisor_name'       => 'Ms. Kim Thuý',
-		'genesis_phone'              => '0903595058',
-		'genesis_phone_display'      => '0903 595 058',
-		'genesis_zalo'               => '0903595058',
-		'genesis_email'              => 'lunanguyen2626@gmail.com',
+		'genesis_advisor_name'       => 'PkD TT Genesis',
+		'genesis_phone'              => '0938912908',
+		'genesis_phone_display'      => '0938.912.908',
+		'genesis_zalo'               => '0938912908',
+		'genesis_email'              => 'office@lunaholdingsvn.com',
 		'genesis_company_name'       => 'CÔNG TY CP KINH DOANH BẤT ĐỘNG SẢN LUNA HOLDINGS',
 		'genesis_company_short'      => 'Luna Holdings',
 		'genesis_tax_code'           => '0318925374',
@@ -102,7 +102,7 @@ function genesis_scripts() {
 		true
 	);
 
-	$zalo = genesis_get_option( 'genesis_zalo', '0903595058' );
+	$zalo = genesis_get_option( 'genesis_zalo', '0938912908' );
 
 	// Localize script data for AJAX and configuration
 	wp_localize_script(
@@ -113,7 +113,7 @@ function genesis_scripts() {
 			'nonce'       => wp_create_nonce( 'genesis_lead_nonce' ),
 			'webhook_url' => genesis_get_option( 'genesis_webhook_url', '' ),
 			'zalo_href'   => 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo ),
-			'advisor'     => genesis_get_option( 'genesis_advisor_name', 'Ms. Kim Thuý' ),
+			'advisor'     => genesis_get_option( 'genesis_advisor_name', 'PkD TT Genesis' ),
 			'deadline'    => genesis_get_option( 'genesis_countdown_deadline', '2026-10-06T23:59:59+07:00' ),
 		)
 	);

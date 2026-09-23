@@ -558,11 +558,11 @@ function genesis_render_campaign_settings_page() {
 		$saved = true;
 	}
 
-	$advisor       = genesis_get_option( 'genesis_advisor_name', 'Ms. Kim Thuý' );
-	$phone         = genesis_get_option( 'genesis_phone', '0903595058' );
-	$phone_display = genesis_get_option( 'genesis_phone_display', '0903 595 058' );
-	$zalo          = genesis_get_option( 'genesis_zalo', '0903595058' );
-	$email         = genesis_get_option( 'genesis_email', 'lunanguyen2626@gmail.com' );
+	$advisor       = genesis_get_option( 'genesis_advisor_name', 'PkD TT Genesis' );
+	$phone         = genesis_get_option( 'genesis_phone', '0938912908' );
+	$phone_display = genesis_get_option( 'genesis_phone_display', '0938.912.908' );
+	$zalo          = genesis_get_option( 'genesis_zalo', '0938912908' );
+	$email         = genesis_get_option( 'genesis_email', 'office@lunaholdingsvn.com' );
 	$company       = genesis_get_option( 'genesis_company_name', 'CÔNG TY CP KINH DOANH BẤT ĐỘNG SẢN LUNA HOLDINGS' );
 	$company_short = genesis_get_option( 'genesis_company_short', 'Luna Holdings' );
 	$tax_code      = genesis_get_option( 'genesis_tax_code', '0318925374' );
@@ -610,21 +610,21 @@ function genesis_render_campaign_settings_page() {
 							<th scope="row"><label for="genesis_advisor_name"><?php esc_html_e( 'Tên chuyên viên tư vấn', 'genesis-theme' ); ?></label></th>
 							<td>
 								<input type="text" name="genesis_advisor_name" id="genesis_advisor_name" value="<?php echo esc_attr( $advisor ); ?>" class="regular-text" />
-								<p class="description"><?php esc_html_e( 'Hiển thị trên form, avatar và nút Zalo (ví dụ: Ms. Kim Thuý, Mr. Tuấn BĐS...).', 'genesis-theme' ); ?></p>
+								<p class="description"><?php esc_html_e( 'Hiển thị trên form, avatar và nút Zalo (ví dụ: PkD TT Genesis, Mr. Tuấn BĐS...).', 'genesis-theme' ); ?></p>
 							</td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="genesis_phone"><?php esc_html_e( 'Số điện thoại Hotline', 'genesis-theme' ); ?></label></th>
 							<td>
 								<input type="text" name="genesis_phone" id="genesis_phone" value="<?php echo esc_attr( $phone ); ?>" class="regular-text" />
-								<p class="description"><?php esc_html_e( 'Viết liền không dấu cách, dùng để gắn link bấm gọi tel: (ví dụ: 0903595058).', 'genesis-theme' ); ?></p>
+								<p class="description"><?php esc_html_e( 'Viết liền không dấu cách, dùng để gắn link bấm gọi tel: (ví dụ: 0938912908).', 'genesis-theme' ); ?></p>
 							</td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="genesis_phone_display"><?php esc_html_e( 'Số điện thoại hiển thị', 'genesis-theme' ); ?></label></th>
 							<td>
 								<input type="text" name="genesis_phone_display" id="genesis_phone_display" value="<?php echo esc_attr( $phone_display ); ?>" class="regular-text" />
-								<p class="description"><?php esc_html_e( 'Dạng chữ hiển thị trên web cho đẹp mắt (ví dụ: 0903 595 058).', 'genesis-theme' ); ?></p>
+								<p class="description"><?php esc_html_e( 'Dạng chữ hiển thị trên web cho đẹp mắt (ví dụ: 0938.912.908).', 'genesis-theme' ); ?></p>
 							</td>
 						</tr>
 						<tr>

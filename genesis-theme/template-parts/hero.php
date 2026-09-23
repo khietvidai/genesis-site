@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $theme_uri = get_template_directory_uri();
-$zalo_raw  = genesis_get_option( 'genesis_zalo', '0903595058' );
+$zalo_raw  = genesis_get_option( 'genesis_zalo', '0938912908' );
 $zalo_href = 'https://zalo.me/' . preg_replace( '/\D/', '', $zalo_raw );
 
 $eyebrow = genesis_get_option( 'genesis_hero_eyebrow', 'Liên doanh Việt Nam · Nhật Bản · Singapore' );

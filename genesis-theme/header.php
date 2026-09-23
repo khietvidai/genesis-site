@@ -10,8 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $theme_uri       = get_template_directory_uri();
-$phone           = genesis_get_option( 'genesis_phone', '0903595058' );
-$phone_display   = genesis_get_option( 'genesis_phone_display', '0903 595 058' );
+$phone           = genesis_get_option( 'genesis_phone', '0938912908' );
+$phone_display   = genesis_get_option( 'genesis_phone_display', '0938.912.908' );
 $tel_href        = 'tel:' . preg_replace( '/\D/', '', $phone );
 $gtm_id          = genesis_get_option( 'genesis_gtm_id', '' );
 $gtag_id         = genesis_get_option( 'genesis_gtag_id', '' );

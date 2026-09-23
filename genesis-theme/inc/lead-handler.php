@@ -134,7 +134,36 @@ function genesis_ajax_submit_lead() {
 		);
 	}
 
-	// 3. Layer 3: Return JSON Success
+	// 3. Layer 3: Send Email Notification to recipient email if configured
+	$notify_email = genesis_get_option( 'genesis_email', 'office@lunaholdingsvn.com' );
+	if ( ! empty( $notify_email ) && is_email( $notify_email ) ) {
+		$subject = sprintf( '[TT GENESIS] Khách hàng mới: %s - %s', $name, $phone );
+		$body    = sprintf(
+			"Thông báo có khách hàng mới đăng ký tư vấn TT GENESIS:\n\n" .
+			"- Họ tên: %s\n" .
+			"- Số điện thoại: %s\n" .
+			"- Nhu cầu quan tâm: %s\n" .
+			"- Kênh liên hệ: %s\n" .
+			"- Form đăng ký: %s\n" .
+			"- Thời gian: %s\n" .
+			"- Trang: %s\n" .
+			"- IP: %s\n\n" .
+			"Xem chi tiết tại trang quản trị WordPress: %s\n",
+			$name,
+			$phone,
+			$interest,
+			$contact_pref,
+			$form_id,
+			$time,
+			$page,
+			$ip,
+			admin_url( 'post.php?post=' . $post_id . '&action=edit' )
+		);
+		$headers = array( 'Content-Type: text/plain; charset=UTF-8' );
+		@wp_mail( $notify_email, $subject, $body, $headers );
+	}
+
+	// 4. Layer 4: Return JSON Success
 	wp_send_json_success(
 		array(
 			'message'      => sprintf(

@@ -39,27 +39,27 @@ function genesis_customize_register( $wp_customize ) {
 	$contact_fields = array(
 		'genesis_advisor_name'  => array(
 			'label'   => __( 'Tên chuyên viên tư vấn', 'genesis-theme' ),
-			'default' => 'Ms. Kim Thuý',
+			'default' => 'PkD TT Genesis',
 			'type'    => 'text',
 		),
 		'genesis_phone'         => array(
 			'label'   => __( 'Số Hotline (chỉ số, dùng cho tel:)', 'genesis-theme' ),
-			'default' => '0903595058',
+			'default' => '0938912908',
 			'type'    => 'text',
 		),
 		'genesis_phone_display' => array(
 			'label'   => __( 'Số Hotline hiển thị trên web', 'genesis-theme' ),
-			'default' => '0903 595 058',
+			'default' => '0938.912.908',
 			'type'    => 'text',
 		),
 		'genesis_zalo'          => array(
 			'label'   => __( 'Số Zalo tư vấn', 'genesis-theme' ),
-			'default' => '0903595058',
+			'default' => '0938912908',
 			'type'    => 'text',
 		),
 		'genesis_email'         => array(
 			'label'   => __( 'Email nhận liên hệ', 'genesis-theme' ),
-			'default' => 'lunanguyen2626@gmail.com',
+			'default' => 'office@lunaholdingsvn.com',
 			'type'    => 'email',
 		),
 		'genesis_company_name'  => array(
