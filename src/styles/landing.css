@@ -417,3 +417,18 @@ h3 { font-size: 18px; font-weight: 600; line-height: 1.35; }
 	.btn--lg { white-space: normal; text-align: center; max-width: 100%; padding: 14px 22px; font-size: 15.5px; }
 	.center .btn--lg { width: 100%; }
 }
+
+.lf__p a.lf__pp { display: inline; margin: 0; color: #7a8193; font-weight: 500; text-decoration: underline; }
+.ft__legal a { color: rgba(255, 255, 255, 0.7); text-decoration: underline; }
+
+/* ---------- trang chính sách ---------- */
+.doc { background: var(--cream); padding: calc(var(--hd-h) + 48px) 0 80px; }
+.doc .wrap--narrow { background: #fff; border: 1px solid var(--line-l); border-radius: 20px; padding: clamp(24px, 5vw, 56px); }
+.doc h1 { font-size: clamp(30px, 5vw, 42px); color: var(--navy); margin-bottom: 8px; }
+.doc h2 { font-size: 21px; color: var(--navy); margin: 32px 0 10px; }
+.doc p, .doc li { color: var(--ink-2); font-size: 15.5px; }
+.doc p + p { margin-top: 10px; }
+.doc ul { list-style: disc; padding-left: 22px; display: grid; gap: 6px; margin-top: 8px; }
+.doc .meta { font-size: 13.5px; color: #7a8193; }
+.doc a { color: var(--amber); }
+.hd--solid { background: rgba(14, 22, 38, 0.96); }

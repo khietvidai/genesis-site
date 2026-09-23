@@ -28,7 +28,8 @@ const offers = [
 		big: "1%",
 		title: "Chiết khấu giữ chỗ sớm",
 		text: "Áp dụng cho khách hàng có giữ chỗ đến hết ngày 06/10/2026.",
-		tag: "Sắp hết hạn",
+		tag: "Đến 06/10/2026",
+		expires: "2026-10-06T23:59:59+07:00",
 	},
 	{
 		big: "29 triệu",
@@ -128,7 +129,7 @@ const plans = [
 	{ id: "2br-corner", tab: "2PN Corner", name: "2 phòng ngủ · 2WC · LUMINA Corner", img: "plan-2br-corner", tt: "71,92 m²", lt: "66,77 m²", note: "Căn góc 2 mặt thoáng" },
 	{ id: "2br-plus", tab: "2PN Plus", name: "2 phòng ngủ · 2WC · LUMINA Plus", img: "plan-2br-plus", tt: "73,96 m²", lt: "68,34 m²", note: "Rộng rãi cho gia đình trẻ" },
 	{ id: "3br-basic", tab: "3PN Basic", name: "3 phòng ngủ · 2WC · TIDAL Basic", img: "plan-3br-basic", tt: "94,55 m²", lt: "88,83 m²", note: "Không gian đa thế hệ" },
-	{ id: "3br-plus", tab: "3PN Plus", name: "3 phòng ngủ · 2WC · TIDAL Plus", img: "plan-3br-plus", tt: "119,57 m²", lt: "113,16 m²", note: "Căn lớn nhất dòng căn hộ điển hình" },
+	{ id: "3br-plus", tab: "3PN Plus", name: "3 phòng ngủ · 2WC · TIDAL Plus", img: "plan-3br-plus", tt: "119,57 m²", lt: "113,16 m²", note: "Không gian rộng rãi cho gia đình đa thế hệ" },
 ];
 
 const payments = [
@@ -414,7 +415,8 @@ const faqLd = {
 						<ul class="hero__ticks">
 							<li>88 tiện ích Compound Resort trên 1,9 ha</li>
 							<li>Sổ hồng sở hữu lâu dài · VPBank bảo lãnh</li>
-							<li>Chiết khấu 1% khi giữ chỗ trước 06/10/2026</li>
+							<li data-expires="2026-10-06T23:59:59+07:00">Chiết khấu 1% cho khách đăng ký sớm đến 06/10/2026 (*)</li>
+							<li data-show-after="2026-10-06T23:59:59+07:00" hidden>Chính sách thanh toán linh hoạt, đến 8% chiết khấu</li>
 						</ul>
 						<div class="hero__cta">
 							<a href="#dang-ky" class="btn btn--gold btn--lg" data-track="cta_hero">Nhận bảng giá & chính sách</a>
@@ -445,7 +447,7 @@ const faqLd = {
 					<header class="sec__hd">
 						<p class="eyebrow">Chính sách bán hàng Đợt 1</p>
 						<h2>Ưu đãi dành cho <em>khách hàng tiên phong</em></h2>
-						<p class="lead">Giai đoạn mở bán đầu tiên luôn có mức giá và chính sách tốt nhất. Ưu đãi giữ chỗ sớm kết thúc sau:</p>
+						<p class="lead">Chính sách bán hàng Đợt 1 do chủ đầu tư ban hành. Ưu đãi chiết khấu 1% cho khách đăng ký sớm kết thúc sau:</p>
 						<div class="countdown" data-deadline="2026-10-06T23:59:59+07:00" aria-live="off">
 							<div><b data-cd="d">--</b><span>ngày</span></div>
 							<div><b data-cd="h">--</b><span>giờ</span></div>
@@ -455,7 +457,7 @@ const faqLd = {
 					</header>
 					<div class="offers">
 						{offers.map((o) => (
-							<article class="offer">
+							<article class="offer" data-expires={o.expires}>
 								{o.tag && <span class="offer__tag">{o.tag}</span>}
 								<div class="offer__big">{o.big}{o.unit && <small>{o.unit}</small>}</div>
 								<h3>{o.title}</h3>
@@ -465,7 +467,7 @@ const faqLd = {
 					</div>
 					<p class="fine">(*) Chi tiết theo thông báo chính sách bán hàng do chủ đầu tư ban hành tại từng thời điểm. Các chính sách có thể không áp dụng đồng thời.</p>
 					<div class="center">
-						<a href="#dang-ky" class="btn btn--gold btn--lg" data-track="cta_offers">Giữ chỗ ưu tiên – nhận chiết khấu 1%</a>
+						<a href="#dang-ky" class="btn btn--gold btn--lg" data-track="cta_offers">Nhận chi tiết chính sách Đợt 1</a>
 					</div>
 				</div>
 			</section>
@@ -747,7 +749,7 @@ const faqLd = {
 				<div class="wrap final__in">
 					<div class="final__copy">
 						<p class="eyebrow">Đăng ký tư vấn 1:1</p>
-						<h2>Nhận bảng giá, mặt bằng & <em>suất giữ chỗ ưu tiên</em></h2>
+						<h2>Nhận bảng giá, mặt bằng & <em>chính sách Đợt 1</em></h2>
 						<ul class="ticks ticks--light">
 							<li>Bảng giá chi tiết từng căn – cập nhật trong ngày</li>
 							<li>Bảng tính dòng tiền theo phương thức bạn chọn</li>
@@ -793,7 +795,7 @@ const faqLd = {
 					mà không cần báo trước; nội dung chính thức căn cứ theo hợp đồng và văn bản do chủ đầu tư ban hành. Hình ảnh phối cảnh chỉ mang tính minh hoạ.
 				</p>
 				<p>Thông tin cá nhân bạn cung cấp chỉ được dùng để tư vấn về dự án TT GENESIS và không chia sẻ cho bên thứ ba.</p>
-				<p>© 2026 {CONTACT.companyShort}.</p>
+				<p><a href="/chinh-sach-bao-mat">Chính sách bảo mật thông tin</a> · © 2026 {CONTACT.companyShort}.</p>
 			</div>
 		</footer>
 
@@ -857,6 +859,11 @@ const faqLd = {
 				var hd = document.querySelector(".hd");
 				var onScroll = function () { hd.classList.toggle("is-stuck", window.scrollY > 24); };
 				window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+				/* ---- tự ẩn ưu đãi đã hết hạn (tránh vi phạm "ưu đãi không còn hiệu lực") ---- */
+				var now = Date.now();
+				$("[data-expires]").forEach(function (el) { var t = Date.parse(el.getAttribute("data-expires")); if (t && now > t) el.hidden = true; });
+				$("[data-show-after]").forEach(function (el) { var t = Date.parse(el.getAttribute("data-show-after")); if (t && now > t) el.hidden = false; });
 
 				/* ---- countdown ---- */
 				$(".countdown").forEach(function (el) {

@@ -1,0 +1,91 @@
+---
+/** Chính sách bảo mật thông tin — trang tĩnh, dùng chung giao diện landing. */
+import "../styles/landing.css";
+import { CONTACT, SITE } from "../config/landing";
+
+export const prerender = true;
+const updated = "23/09/2026";
+---
+
+<!doctype html>
+<html lang="vi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Chính sách bảo mật thông tin | TT GENESIS – {CONTACT.companyShort}</title>
+		<meta name="description" content={`Chính sách thu thập, sử dụng và bảo vệ thông tin cá nhân của ${CONTACT.company}.`} />
+		{SITE.url && <link rel="canonical" href={SITE.url + "/chinh-sach-bao-mat"} />}
+		<link rel="icon" type="image/png" href="/img/favicon.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<header class="hd hd--solid">
+			<div class="wrap hd__in">
+				<a href="/" class="hd__logo" aria-label="Về trang chủ TT GENESIS"><img src="/img/logo-white.png" alt="TT GENESIS" width="156" height="40" /></a>
+				<a href="/" class="btn btn--ghost hd__call">← Về trang chủ</a>
+			</div>
+		</header>
+
+		<main class="doc">
+			<article class="wrap wrap--narrow">
+				<h1>Chính sách bảo mật thông tin</h1>
+				<p class="meta">Cập nhật lần cuối: {updated}</p>
+
+				<h2>1. Đơn vị chịu trách nhiệm</h2>
+				<p>
+					Trang thông tin về dự án TT GENESIS này do <b>{CONTACT.company}</b> (MST {CONTACT.taxCode}, địa chỉ {CONTACT.address}) vận hành với vai trò đơn vị tư vấn, phân phối.
+					Chúng tôi không phải chủ đầu tư dự án. Chúng tôi là bên kiểm soát và xử lý thông tin cá nhân bạn cung cấp trên trang này.
+				</p>
+
+				<h2>2. Thông tin chúng tôi thu thập</h2>
+				<ul>
+					<li>Thông tin bạn tự điền vào form: họ tên, số điện thoại, cách liên hệ bạn chọn (Zalo hoặc gọi điện) và loại căn hộ quan tâm.</li>
+					<li>Thông tin kỹ thuật đi kèm khi gửi form: thời điểm gửi, trang bạn đang xem và nguồn truy cập (ví dụ tham số chiến dịch quảng cáo utm, mã nhấp gclid, fbclid, ttclid).</li>
+					<li>Nếu trang có gắn công cụ đo lường của Google, Meta hoặc TikTok, các công cụ này có thể dùng cookie hoặc công nghệ tương tự để ghi nhận lượt xem trang và lượt gửi form.</li>
+				</ul>
+				<p>Chúng tôi không thu thập số CMND/CCCD, thông tin tài khoản ngân hàng hay mật khẩu qua trang này.</p>
+
+				<h2>3. Mục đích sử dụng</h2>
+				<ul>
+					<li>Liên hệ để gửi bảng giá, mặt bằng, chính sách bán hàng và tư vấn về dự án TT GENESIS theo đúng cách liên hệ bạn đã chọn.</li>
+					<li>Đo lường hiệu quả quảng cáo và cải thiện nội dung trang.</li>
+				</ul>
+				<p>Chúng tôi chỉ xử lý thông tin khi có sự đồng ý của bạn, thể hiện qua việc bạn chủ động gửi form. Chúng tôi không dùng thông tin của bạn cho mục đích khác ngoài các mục đích trên.</p>
+
+				<h2>4. Chia sẻ thông tin</h2>
+				<ul>
+					<li>Chúng tôi <b>không bán</b> và không chia sẻ số điện thoại của bạn cho môi giới, sàn giao dịch hay bên thứ ba khác để tiếp thị.</li>
+					<li>Thông tin được lưu trên dịch vụ lưu trữ của Google (Google Sheets) do chúng tôi quản lý.</li>
+					<li>Dữ liệu đo lường có thể được chia sẻ với nền tảng quảng cáo (Google, Meta, TikTok) để đo lường hiệu quả chiến dịch thay mặt chúng tôi.</li>
+					<li>Chúng tôi có thể cung cấp thông tin khi cơ quan nhà nước có thẩm quyền yêu cầu theo quy định pháp luật.</li>
+				</ul>
+
+				<h2>5. Thời gian lưu trữ</h2>
+				<p>Thông tin được lưu trong thời gian cần thiết để tư vấn về dự án, tối đa 24 tháng kể từ lần liên hệ cuối, hoặc cho đến khi bạn yêu cầu xoá.</p>
+
+				<h2>6. Quyền của bạn</h2>
+				<p>Bạn có quyền yêu cầu xem, chỉnh sửa, xoá thông tin; rút lại sự đồng ý; hoặc yêu cầu ngừng liên hệ bất cứ lúc nào. Chúng tôi sẽ xử lý yêu cầu trong vòng 72 giờ làm việc.</p>
+
+				<h2>7. Bảo mật</h2>
+				<p>Trang sử dụng kết nối mã hoá HTTPS. Quyền truy cập dữ liệu khách hàng chỉ giới hạn cho chuyên viên phụ trách tư vấn của {CONTACT.companyShort}.</p>
+
+				<h2>8. Liên hệ</h2>
+				<p>
+					Email: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a><br />
+					Điện thoại: <a href={`tel:${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a> ({CONTACT.advisor})<br />
+					Địa chỉ: {CONTACT.address}
+				</p>
+				<p>Chúng tôi có thể cập nhật chính sách này. Phiên bản mới sẽ được đăng trên trang này kèm ngày cập nhật.</p>
+			</article>
+		</main>
+
+		<footer class="ft">
+			<div class="wrap ft__legal">
+				<p>{CONTACT.company} · MST {CONTACT.taxCode} · {CONTACT.address}</p>
+				<p>Trang thông tin do đơn vị tư vấn, phân phối thực hiện; không phải website chính thức của chủ đầu tư dự án TT GENESIS.</p>
+			</div>
+		</footer>
+	</body>
+</html>
