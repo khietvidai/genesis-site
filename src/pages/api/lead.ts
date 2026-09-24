@@ -57,8 +57,8 @@ export const POST: APIRoute = async ({ request }) => {
 		await appendLeadToGoogleSheet({
 			name,
 			phone,
-			interest: body.interest,
-			contact_pref: body.contact_pref,
+			interest: (body.interest && body.interest !== 'Chưa xác định') ? body.interest : 'Nhận báo giá Đợt 1',
+			contact_pref: body.contact_pref || 'Zalo',
 			form: body.form,
 			page: body.page,
 			time: body.time,

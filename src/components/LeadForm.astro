@@ -8,8 +8,9 @@ interface Props {
 	cta?: string;
 	/** Bản rút gọn (hero): ẩn ô chọn loại căn để form ngắn, dễ điền */
 	compact?: boolean;
+	interest?: string;
 }
-const { id, title, subtitle, cta = "Đăng ký", compact = false } = Astro.props;
+const { id, title, subtitle, cta = "Đăng ký", compact = false, interest = "Nhận báo giá Đợt 1" } = Astro.props;
 const initials = (CONTACT as { advisorInitials?: string }).advisorInitials || CONTACT.advisor.replace(/^(Ms\.|Mr\.|Mrs\.)\s*/i, "").split(/\s+/).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
 const zaloHref = `https://zalo.me/${CONTACT.zalo}`;
 ---
@@ -38,16 +39,16 @@ const zaloHref = `https://zalo.me/${CONTACT.zalo}`;
 		<label><input type="radio" name="contact_pref" value="Gọi điện" /><span>Gọi điện</span></label>
 	</fieldset>
 
-	{compact ? <input type="hidden" name="interest" value="Chưa xác định" /> : (
+	{compact ? <input type="hidden" name="interest" value={interest} /> : (
 	<label>
 		<span>Loại căn quan tâm <i>(không bắt buộc)</i></span>
 		<select name="interest">
-			<option value="Chưa xác định">Cần tư vấn thêm</option>
+			<option value={interest}>Nhận bảng giá & tư vấn chung</option>
 			<option value="Studio">Studio · 35 m²</option>
 			<option value="1PN">1 phòng ngủ · 53 m²</option>
 			<option value="2PN">2 phòng ngủ · 69–74 m²</option>
 			<option value="3PN">3 phòng ngủ · 95–120 m²</option>
-			<option value="Khác">Duplex / Sân vườn / Penthouse</option>
+			<option value="Duplex / Penthouse">Duplex / Sân vườn / Penthouse</option>
 		</select>
 	</label>
 	)}

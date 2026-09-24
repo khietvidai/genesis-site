@@ -65,17 +65,17 @@ $initials = mb_strtoupper( $initials, 'UTF-8' );
 	</fieldset>
 
 	<?php if ( $compact ) : ?>
-		<input type="hidden" name="interest" value="Chưa xác định" />
+		<input type="hidden" name="interest" value="<?php echo esc_attr( ! empty( $interest ) ? $interest : 'Nhận báo giá Đợt 1' ); ?>" />
 	<?php else : ?>
 		<label>
 			<span><?php esc_html_e( 'Loại căn quan tâm', 'genesis-theme' ); ?> <i>(<?php esc_html_e( 'không bắt buộc', 'genesis-theme' ); ?>)</i></span>
 			<select name="interest">
-				<option value="Chưa xác định"><?php esc_html_e( 'Cần tư vấn thêm', 'genesis-theme' ); ?></option>
+				<option value="Nhận báo giá Đợt 1"><?php esc_html_e( 'Nhận bảng giá & tư vấn chung', 'genesis-theme' ); ?></option>
 				<option value="Studio"><?php esc_html_e( 'Studio · 35 m²', 'genesis-theme' ); ?></option>
 				<option value="1PN"><?php esc_html_e( '1 phòng ngủ · 53 m²', 'genesis-theme' ); ?></option>
 				<option value="2PN"><?php esc_html_e( '2 phòng ngủ · 69–74 m²', 'genesis-theme' ); ?></option>
 				<option value="3PN"><?php esc_html_e( '3 phòng ngủ · 95–120 m²', 'genesis-theme' ); ?></option>
-				<option value="Khác"><?php esc_html_e( 'Duplex / Sân vườn / Penthouse', 'genesis-theme' ); ?></option>
+				<option value="Duplex / Penthouse"><?php esc_html_e( 'Duplex / Sân vườn / Penthouse', 'genesis-theme' ); ?></option>
 			</select>
 		</label>
 	<?php endif; ?>
