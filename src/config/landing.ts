@@ -29,11 +29,10 @@ export const CONTACT = {
 
 export const LEAD = {
 	/**
-	 * URL Web App của Google Apps Script (xem docs/HUONG-DAN-GOOGLE-SHEET.md).
-	 * Ví dụ: "https://script.google.com/macros/s/AKfycb.../exec"
-	 * Khi để trống, form sẽ chuyển khách sang Zalo thay vì lưu vào Sheet.
+	 * URL Web App của Google Apps Script hoặc internal API.
+	 * Mặc định dùng internal API /api/lead kết nối Google Cloud Service Account.
 	 */
-	webhookUrl: "",
+	webhookUrl: "/api/lead",
 };
 
 export const TRACKING = {

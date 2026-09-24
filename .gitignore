@@ -11,6 +11,8 @@ data.db
 !.env.example
 .dev.vars
 .dev.vars.*
+gscapi.json
+*service_account*.json
 
 # WordPress theme package
 genesis-theme.zip

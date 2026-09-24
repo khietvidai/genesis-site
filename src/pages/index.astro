@@ -945,15 +945,24 @@ const faqLd = {
 							setTimeout(function () { window.open(zaloHref, "_blank"); }, 900);
 							return;
 						}
-						fetch(webhookUrl, { method: "POST", mode: "no-cors", body: data })
-							.then(function () {
-								track("generate_lead", { form_id: form.getAttribute("data-lead"), interest: form.interest.value });
-								done("Đăng ký thành công! Chuyên viên sẽ liên hệ " + phone + " sớm nhất.");
+						var isSameOrigin = webhookUrl.startsWith("/") || webhookUrl.indexOf(location.origin) === 0;
+						var opts = isSameOrigin ? { method: "POST", body: data } : { method: "POST", mode: "no-cors", body: data };
+						fetch(webhookUrl, opts)
+							.then(function (res) {
+								if (isSameOrigin && !res.ok) {
+									return res.json().then(function (err) { throw new Error(err.message || "Lỗi gửi thông tin"); });
+								}
+								return isSameOrigin ? res.json() : null;
 							})
-							.catch(function () {
+							.then(function (resData) {
+								track("generate_lead", { form_id: form.getAttribute("data-lead"), interest: form.interest.value });
+								var succMsg = (resData && resData.message) ? resData.message : ("Đăng ký thành công! Chuyên viên sẽ liên hệ " + phone + " sớm nhất.");
+								done(succMsg);
+							})
+							.catch(function (err) {
 								btn.disabled = false; btn.textContent = btn.dataset.label;
 								msg.className = "lf__msg is-err";
-								msg.textContent = "Chưa gửi được do lỗi mạng. Vui lòng thử lại hoặc gọi hotline.";
+								msg.textContent = (err && err.message) ? err.message : "Chưa gửi được do lỗi mạng. Vui lòng thử lại hoặc gọi hotline.";
 							});
 					});
 					function fail(t, el) { msg.className = "lf__msg is-err"; msg.textContent = t; el.focus(); }
