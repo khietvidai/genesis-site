@@ -1,7 +1,82 @@
-import creds from '../../gscapi.json';
-
 const SPREADSHEET_ID = '1RuQqfFSAiOiUjJuPc84FI1Yl9O2m9iKkXb-0hQDHxO0';
 const SHEET_TAB = 'Trang tính1';
+
+interface GoogleCredentials {
+	client_email: string;
+	private_key: string;
+	token_uri?: string;
+}
+
+async function getEnvVar(key: string): Promise<string | undefined> {
+	if (typeof process !== 'undefined' && process.env && process.env[key]) {
+		return process.env[key];
+	}
+	if (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env[key]) {
+		return (import.meta as any).env[key];
+	}
+	try {
+		const cf = await import('cloudflare:workers');
+		if (cf.env && (cf.env as any)[key]) {
+			return (cf.env as any)[key];
+		}
+	} catch {
+		// Not in workerd environment or module unavailable
+	}
+	return undefined;
+}
+
+async function getLocalCreds(): Promise<GoogleCredentials | null> {
+	if (typeof process !== 'undefined' && process.cwd) {
+		try {
+			const fs = await import('node:fs');
+			const path = await import('node:path');
+			const filePath = path.resolve(process.cwd(), 'gscapi.json');
+			if (fs.existsSync(filePath)) {
+				const content = fs.readFileSync(filePath, 'utf-8');
+				return JSON.parse(content);
+			}
+		} catch {
+			// Filesystem unavailable or file not found
+		}
+	}
+	return null;
+}
+
+async function getCredentials(): Promise<GoogleCredentials | null> {
+	// 1. Try full JSON or base64 JSON from GOOGLE_SERVICE_ACCOUNT_KEY
+	const rawKey = await getEnvVar('GOOGLE_SERVICE_ACCOUNT_KEY');
+	if (rawKey) {
+		try {
+			const trimmed = rawKey.trim();
+			if (trimmed.startsWith('{')) {
+				return JSON.parse(trimmed);
+			}
+			const decoded = Buffer.from(trimmed, 'base64').toString('utf-8');
+			return JSON.parse(decoded);
+		} catch (e) {
+			console.error('Failed to parse GOOGLE_SERVICE_ACCOUNT_KEY env var:', e);
+		}
+	}
+
+	// 2. Try individual environment variables
+	const clientEmail = await getEnvVar('GOOGLE_CLIENT_EMAIL');
+	const privateKey = await getEnvVar('GOOGLE_PRIVATE_KEY');
+	if (clientEmail && privateKey) {
+		return {
+			client_email: clientEmail,
+			private_key: privateKey.replace(/\\n/g, '\n'),
+			token_uri: (await getEnvVar('GOOGLE_TOKEN_URI')) || 'https://oauth2.googleapis.com/token',
+		};
+	}
+
+	// 3. Fallback to local gscapi.json if present (local dev)
+	const local = await getLocalCreds();
+	if (local && local.client_email && local.private_key) {
+		return local;
+	}
+
+	return null;
+}
 
 function base64url(buffer: ArrayBuffer | string): string {
 	if (typeof buffer === 'string') {
@@ -14,6 +89,7 @@ function pemToPkcs8(pem: string): ArrayBuffer {
 	const b64 = pem
 		.replace(/-----BEGIN PRIVATE KEY-----/, '')
 		.replace(/-----END PRIVATE KEY-----/, '')
+		.replace(/\\n/g, '')
 		.replace(/\s+/g, '');
 	const buf = Buffer.from(b64, 'base64');
 	return buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength);
@@ -27,6 +103,13 @@ async function getAccessToken(): Promise<string> {
 		return cachedToken.token;
 	}
 
+	const creds = await getCredentials();
+	if (!creds || !creds.client_email || !creds.private_key) {
+		throw new Error(
+			'Chưa cấu hình tài khoản Google Cloud Service Account (vui lòng đặt GOOGLE_SERVICE_ACCOUNT_KEY trong Cloudflare hoặc cung cấp file gscapi.json khi chạy local).'
+		);
+	}
+
 	const binaryKey = pemToPkcs8(creds.private_key);
 	const key = await crypto.subtle.importKey(
 		'pkcs8',
@@ -36,12 +119,14 @@ async function getAccessToken(): Promise<string> {
 		['sign']
 	);
 
+	const tokenUri = creds.token_uri || 'https://oauth2.googleapis.com/token';
+
 	const header = base64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
 	const claim = base64url(
 		JSON.stringify({
 			iss: creds.client_email,
 			scope: 'https://www.googleapis.com/auth/spreadsheets',
-			aud: creds.token_uri,
+			aud: tokenUri,
 			exp: now + 3600,
 			iat: now,
 		})
@@ -56,7 +141,7 @@ async function getAccessToken(): Promise<string> {
 	const sig = base64url(sigBuf);
 	const jwt = `${unsigned}.${sig}`;
 
-	const res = await fetch(creds.token_uri, {
+	const res = await fetch(tokenUri, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 		body: new URLSearchParams({
