@@ -10,6 +10,7 @@ import { createPublicPageContext } from "emdash/page";
 import LiveSearch from "emdash/ui/search";
 import { Font } from "astro:assets";
 import { resolveBlogSiteIdentity } from "../utils/site-identity";
+import { TRACKING } from "../config/landing";
 import "../styles/tokens.css";
 import "../styles/theme.css";
 
@@ -87,6 +88,14 @@ const isLoggedIn = !!Astro.locals.user;
 		<Font cssVariable="--font-mono" />
 		<title>{fullTitle}</title>
 		<EmDashHead page={pageCtx} />
+		{
+			TRACKING.gtmId && (
+				<script
+					is:inline
+					set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${TRACKING.gtmId}');`}
+				/>
+			)
+		}
 		<script is:inline>
 			// Apply an explicit theme choice immediately to prevent flash.
 			// With no cookie, color-scheme: light dark follows the OS.
@@ -102,6 +111,13 @@ const isLoggedIn = !!Astro.locals.user;
 	</head>
 	<body>
 		<EmDashBodyStart page={pageCtx} />
+		{
+			TRACKING.gtmId && (
+				<noscript>
+					<iframe src={`https://www.googletagmanager.com/ns.html?id=${TRACKING.gtmId}`} height="0" width="0" style="display:none;visibility:hidden" />
+				</noscript>
+			)
+		}
 		<header class="site-header">
 			<nav class="nav">
 				<a href="/" class="site-title">

@@ -1,7 +1,7 @@
 ---
 /** Chính sách bảo mật thông tin — trang tĩnh, dùng chung giao diện landing. */
 import "../styles/landing.css";
-import { CONTACT, SITE } from "../config/landing";
+import { CONTACT, SITE, TRACKING } from "../config/landing";
 
 export const prerender = true;
 const updated = "23/09/2026";
@@ -20,8 +20,24 @@ const updated = "23/09/2026";
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+
+		{
+			TRACKING.gtmId && (
+				<script
+					is:inline
+					set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${TRACKING.gtmId}');`}
+				/>
+			)
+		}
 	</head>
 	<body>
+		{
+			TRACKING.gtmId && (
+				<noscript>
+					<iframe src={`https://www.googletagmanager.com/ns.html?id=${TRACKING.gtmId}`} height="0" width="0" style="display:none;visibility:hidden" />
+				</noscript>
+			)
+		}
 		<header class="hd hd--solid">
 			<div class="wrap hd__in">
 				<a href="/" class="hd__logo" aria-label="Về trang chủ TT GENESIS"><img src="/img/logo-white.png" alt="TT GENESIS" width="156" height="40" /></a>
