@@ -24,6 +24,7 @@ $tiktok_pixel_id = genesis_get_option( 'genesis_tiktok_pixel_id', '' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="theme-color" content="#16213a" />
+	<meta name="fraudguard-verification" content="5c1da588ec73beb9a336e87577292e2b94275e3c45deb6e1b84c8efa93ca0e11" />
 	<link rel="icon" type="image/png" href="<?php echo esc_url( $theme_uri . '/assets/img/favicon.png' ); ?>" />
 
 	<?php if ( is_front_page() ) : ?>
@@ -40,11 +41,13 @@ $tiktok_pixel_id = genesis_get_option( 'genesis_tiktok_pixel_id', '' );
 	<link rel="preload" as="image" href="<?php echo esc_url( $theme_uri . '/assets/img/hero.webp' ); ?>" media="(min-width: 768px)" fetchpriority="high" />
 	<link rel="preload" as="image" href="<?php echo esc_url( $theme_uri . '/assets/img/hero-m.webp' ); ?>" media="(max-width: 767px)" fetchpriority="high" />
 
-	<?php if ( ! empty( $gtm_id ) ) : ?>
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','<?php echo esc_js( $gtm_id ); ?>');</script>
-		<!-- End Google Tag Manager -->
-	<?php endif; ?>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-56TLDKK3');</script>
+	<!-- End Google Tag Manager -->
 
 	<?php if ( ! empty( $gtag_id ) ) : ?>
 		<!-- Global site tag (gtag.js) - Google Analytics / Google Ads -->
@@ -81,11 +84,10 @@ $tiktok_pixel_id = genesis_get_option( 'genesis_tiktok_pixel_id', '' );
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php if ( ! empty( $gtm_id ) ) : ?>
 	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo esc_attr( $gtm_id ); ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56TLDKK3"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-<?php endif; ?>
 
 <a class="skip" href="#dang-ky"><?php esc_html_e( 'Đến form đăng ký', 'genesis-theme' ); ?></a>
 

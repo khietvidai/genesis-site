@@ -37,7 +37,7 @@ export const LEAD = {
 
 export const TRACKING = {
 	/** Google Tag Manager, ví dụ "GTM-XXXXXXX" */
-	gtmId: "",
+	gtmId: "GTM-56TLDKK3",
 	/** Google Analytics 4 / Google Ads, ví dụ "G-XXXXXXXXXX" hoặc "AW-XXXXXXXXX" */
 	gtagId: "",
 	/** Meta (Facebook) Pixel ID */
