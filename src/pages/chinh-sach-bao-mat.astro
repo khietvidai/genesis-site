@@ -52,8 +52,8 @@ const updated = "23/09/2026";
 
 				<h2>1. Đơn vị chịu trách nhiệm</h2>
 				<p>
-					Trang thông tin về dự án TT GENESIS này do <b>{CONTACT.company}</b> (MST {CONTACT.taxCode}, địa chỉ {CONTACT.address}) vận hành với vai trò đơn vị tư vấn, phân phối.
-					Chúng tôi không phải chủ đầu tư dự án. Chúng tôi là bên kiểm soát và xử lý thông tin cá nhân bạn cung cấp trên trang này.
+					Trang thông tin về dự án TT GENESIS này do <b>{CONTACT.company}</b> (Giấy chứng nhận đăng ký doanh nghiệp số: {CONTACT.taxCode} do {CONTACT.licensePlace} cấp lần đầu ngày {CONTACT.licenseDate}, Người đại diện theo pháp luật: {CONTACT.representative}, Địa chỉ trụ sở chính: {CONTACT.address}) vận hành với vai trò đơn vị tư vấn, phân phối độc lập.
+					Chúng tôi không phải chủ đầu tư dự án. Chúng tôi là bên kiểm soát và xử lý thông tin cá nhân bạn cung cấp trên trang này theo quy định pháp luật.
 				</p>
 
 				<h2>2. Thông tin chúng tôi thu thập</h2>
@@ -90,9 +90,12 @@ const updated = "23/09/2026";
 
 				<h2>8. Liên hệ</h2>
 				<p>
-					Email: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a><br />
-					Điện thoại: <a href={`tel:${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a> ({CONTACT.advisor})<br />
-					Địa chỉ: {CONTACT.address}
+					<b>{CONTACT.company}</b><br />
+					Mã số DN: {CONTACT.taxCode} (Cấp ngày {CONTACT.licenseDate} tại {CONTACT.licensePlace})<br />
+					Người đại diện pháp luật: {CONTACT.representative}<br />
+					Địa chỉ trụ sở chính: {CONTACT.address}<br />
+					Điện thoại/Zalo: <a href={`tel:${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a> ({CONTACT.advisor})<br />
+					Email: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
 				</p>
 				<p>Chúng tôi có thể cập nhật chính sách này. Phiên bản mới sẽ được đăng trên trang này kèm ngày cập nhật.</p>
 			</article>
@@ -100,8 +103,15 @@ const updated = "23/09/2026";
 
 		<footer class="ft">
 			<div class="wrap ft__legal">
-				<p>{CONTACT.company} · MST {CONTACT.taxCode} · {CONTACT.address}</p>
-				<p>Trang thông tin do đơn vị tư vấn, phân phối thực hiện; không phải website chính thức của chủ đầu tư dự án TT GENESIS.</p>
+				<p>{CONTACT.company} · MST {CONTACT.taxCode} · Trụ sở: {CONTACT.address}</p>
+				<p>
+					Trang thông tin do {CONTACT.companyShort} – đơn vị tư vấn, phân phối – thực hiện; không phải website chính thức của chủ đầu tư dự án TT GENESIS.
+				</p>
+				<p>
+					<a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> · 
+					<a href="/dieu-khoan-su-dung">Điều khoản sử dụng</a> · 
+					<a href="/lien-he">Thông tin pháp lý & Liên hệ</a>
+				</p>
 			</div>
 		</footer>
 	</body>

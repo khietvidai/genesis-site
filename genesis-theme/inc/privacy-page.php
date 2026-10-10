@@ -19,7 +19,7 @@ function genesis_privacy_policy_content() {
 	$company = genesis_get_option( 'genesis_company_name', 'CÔNG TY CP KINH DOANH BẤT ĐỘNG SẢN LUNA HOLDINGS' );
 	$short   = genesis_get_option( 'genesis_company_short', 'Luna Holdings' );
 	$tax     = genesis_get_option( 'genesis_tax_code', '0318925374' );
-	$addr    = genesis_get_option( 'genesis_address', '427 Đường Số 1, Phường An Lạc, TP. Hồ Chí Minh, Việt Nam' );
+	$addr    = genesis_get_option( 'genesis_address', '427 Đường Số 1, Phường Bình Trị Đông B, Quận Bình Tân, Thành phố Hồ Chí Minh, Việt Nam' );
 	$email   = genesis_get_option( 'genesis_email', 'office@lunaholdingsvn.com' );
 	$phone   = genesis_get_option( 'genesis_phone_display', '0938.912.908' );
 

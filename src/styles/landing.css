@@ -92,7 +92,22 @@ h3 { font-size: 18px; font-weight: 600; line-height: 1.35; }
 .hd { position: fixed; inset: 0 0 auto 0; z-index: 100; height: var(--hd-h); transition: background 0.25s, box-shadow 0.25s; }
 .hd.is-stuck { background: rgba(14, 22, 38, 0.92); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--line-d); }
 .hd__in { height: 100%; display: flex; align-items: center; gap: 28px; }
-.hd__logo img { height: 34px; width: auto; }
+.hd__brand { display: flex; align-items: center; gap: 12px; }
+.hd__logo img { height: 34px; width: auto; display: block; }
+.hd__badge {
+	font-size: 11px;
+	letter-spacing: 0.04em;
+	padding: 3px 8px;
+	border-radius: 4px;
+	background: rgba(198, 154, 95, 0.16);
+	border: 1px solid rgba(198, 154, 95, 0.45);
+	color: var(--gold-hi);
+	font-weight: 600;
+	white-space: nowrap;
+}
+@media (max-width: 540px) {
+	.hd__badge { display: none; }
+}
 .hd__nav { display: none; gap: 26px; margin-left: auto; }
 .hd__nav a { color: rgba(255, 255, 255, 0.85); text-decoration: none; font-size: 14.5px; font-weight: 500; }
 .hd__nav a:hover { color: var(--gold-hi); }

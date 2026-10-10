@@ -20,7 +20,7 @@ $email         = genesis_get_option( 'genesis_email', 'office@lunaholdingsvn.com
 $company       = genesis_get_option( 'genesis_company_name', 'CÔNG TY CP KINH DOANH BẤT ĐỘNG SẢN LUNA HOLDINGS' );
 $company_short = genesis_get_option( 'genesis_company_short', 'Luna Holdings' );
 $tax_code      = genesis_get_option( 'genesis_tax_code', '0318925374' );
-$address       = genesis_get_option( 'genesis_address', '427 Đường Số 1, Phường An Lạc, TP. Hồ Chí Minh, Việt Nam' );
+$address       = genesis_get_option( 'genesis_address', '427 Đường Số 1, Phường Bình Trị Đông B, Quận Bình Tân, Thành phố Hồ Chí Minh, Việt Nam' );
 ?>
 
 </main>

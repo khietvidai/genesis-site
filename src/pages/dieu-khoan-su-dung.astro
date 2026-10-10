@@ -1,0 +1,112 @@
+---
+/** Điều khoản sử dụng & Miễn trừ trách nhiệm — trang tĩnh, dùng chung giao diện landing. */
+import "../styles/landing.css";
+import { CONTACT, SITE, TRACKING } from "../config/landing";
+
+export const prerender = true;
+const updated = "10/10/2026";
+---
+
+<!doctype html>
+<html lang="vi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="fraudguard-verification" content="5c1da588ec73beb9a336e87577292e2b94275e3c45deb6e1b84c8efa93ca0e11" />
+		<title>Điều khoản sử dụng & Miễn trừ trách nhiệm | TT GENESIS – {CONTACT.companyShort}</title>
+		<meta name="description" content={`Điều khoản sử dụng, chính sách minh bạch và miễn trừ trách nhiệm của ${CONTACT.company}.`} />
+		{SITE.url && <link rel="canonical" href={SITE.url + "/dieu-khoan-su-dung"} />}
+		<link rel="icon" type="image/png" href="/img/favicon.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+
+		{
+			TRACKING.gtmId && (
+				<script
+					is:inline
+					set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${TRACKING.gtmId}');`}
+				/>
+			)
+		}
+	</head>
+	<body>
+		{
+			TRACKING.gtmId && (
+				<noscript>
+					<iframe src={`https://www.googletagmanager.com/ns.html?id=${TRACKING.gtmId}`} height="0" width="0" style="display:none;visibility:hidden" />
+				</noscript>
+			)
+		}
+		<header class="hd hd--solid">
+			<div class="wrap hd__in">
+				<a href="/" class="hd__logo" aria-label="Về trang chủ TT GENESIS"><img src="/img/logo-white.png" alt="TT GENESIS" width="156" height="40" /></a>
+				<a href="/" class="btn btn--ghost hd__call">← Về trang chủ</a>
+			</div>
+		</header>
+
+		<main class="doc">
+			<article class="wrap wrap--narrow">
+				<h1>Điều khoản sử dụng & Miễn trừ trách nhiệm</h1>
+				<p class="meta">Cập nhật lần cuối: {updated}</p>
+
+				<h2>1. Giới thiệu & Vai trò pháp lý</h2>
+				<p>
+					Website này được sở hữu và vận hành bởi <b>{CONTACT.company}</b> (Mã số DN: {CONTACT.taxCode} do {CONTACT.licensePlace} cấp ngày {CONTACT.licenseDate}, trụ sở chính tại: {CONTACT.address}).
+				</p>
+				<p>
+					<b>{CONTACT.companyShort} là đơn vị tư vấn và phân phối bất động sản độc lập.</b> Chúng tôi KHÔNG PHẢI là chủ đầu tư dự án TT GENESIS (Chủ đầu tư dự án là Công ty CP Bất động sản Phúc Long – Phước Kiển cùng đơn vị đầu tư phát triển liên doanh TT Capital, Cosmos Initia, Hinokiya, Koterasu, Vietmax Capital).
+				</p>
+
+				<h2>2. Mục đích hoạt động của website</h2>
+				<p>
+					Website có chức năng cung cấp thông tin tổng quan, thông số thiết kế, tiến độ xây dựng và chính sách bán hàng tham khảo về dự án căn hộ TT GENESIS cho khách hàng có nhu cầu tìm hiểu và nhận tư vấn trực tiếp từ đội ngũ chuyên viên của {CONTACT.companyShort}.
+				</p>
+
+				<h2>3. Tính chính xác của thông tin & Miễn trừ trách nhiệm</h2>
+				<ul>
+					<li>Mọi thông tin, hình ảnh phối cảnh, video, giá bán dự kiến và chính sách ưu đãi trên website được tổng hợp từ các tài liệu giới thiệu chính thức do Chủ đầu tư và Đơn vị phát triển dự án công bố tại từng thời điểm.</li>
+					<li>Các thông số kỹ thuật, vật liệu bàn giao, diện tích chi tiết và nghĩa vụ tài chính cuối cùng sẽ căn cứ theo Hợp đồng mua bán và các văn bản thỏa thuận chính thức được ký kết giữa Khách hàng và Chủ đầu tư.</li>
+					<li>Các gói tài chính, hỗ trợ lãi suất hoặc ân hạn nợ gốc do các ngân hàng đối tác liên kết thực hiện theo quy trình thẩm định tín dụng độc lập của từng ngân hàng.</li>
+				</ul>
+
+				<h2>4. Bản quyền & Sở hữu trí tuệ</h2>
+				<p>
+					Nhãn hiệu, biểu trưng TT GENESIS và các hình ảnh phối cảnh liên quan thuộc quyền sở hữu của Chủ đầu tư và các đối tác liên doanh. {CONTACT.companyShort} sử dụng các hình ảnh và tư liệu này phục vụ cho hoạt động tiếp thị, giới thiệu và phân phối sản phẩm theo thẩm quyền của đơn vị môi giới/đại lý bán hàng.
+				</p>
+
+				<h2>5. Quyền và trách nhiệm của người dùng</h2>
+				<ul>
+					<li>Người dùng cam kết cung cấp thông tin liên hệ (họ tên, số điện thoại) chính xác khi đăng ký nhận tài liệu, bảng giá hoặc lịch tham quan.</li>
+					<li>Tuyệt đối không sử dụng website vào mục đích gian lận, phá hoại hạ tầng mạng hoặc xâm phạm quyền lợi của người khác.</li>
+				</ul>
+
+				<h2>6. Thông tin liên hệ giải quyết khiếu nại</h2>
+				<p>
+					Nếu có bất kỳ thắc mắc hoặc phản hồi nào về nội dung trên website, quý khách vui lòng liên hệ:
+				</p>
+				<p>
+					<b>{CONTACT.company}</b><br />
+					Mã số DN: {CONTACT.taxCode}<br />
+					Địa chỉ: {CONTACT.address}<br />
+					Hotline: <a href={`tel:${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a><br />
+					Email: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+				</p>
+			</article>
+		</main>
+
+		<footer class="ft">
+			<div class="wrap ft__legal">
+				<p>{CONTACT.company} · MST {CONTACT.taxCode} · Trụ sở: {CONTACT.address}</p>
+				<p>
+					Trang thông tin do {CONTACT.companyShort} – đơn vị tư vấn, phân phối – thực hiện; không phải website chính thức của chủ đầu tư dự án TT GENESIS.
+				</p>
+				<p>
+					<a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> · 
+					<a href="/dieu-khoan-su-dung">Điều khoản sử dụng</a> · 
+					<a href="/lien-he">Thông tin pháp lý & Liên hệ</a>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -79,7 +79,7 @@ function genesis_customize_register( $wp_customize ) {
 		),
 		'genesis_address'       => array(
 			'label'   => __( 'Địa chỉ doanh nghiệp', 'genesis-theme' ),
-			'default' => '427 Đường Số 1, Phường An Lạc, TP. Hồ Chí Minh, Việt Nam',
+			'default' => '427 Đường Số 1, Phường Bình Trị Đông B, Quận Bình Tân, Thành phố Hồ Chí Minh, Việt Nam',
 			'type'    => 'textarea',
 		),
 	);

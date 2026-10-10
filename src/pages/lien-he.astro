@@ -1,0 +1,128 @@
+---
+/** Trang Thông tin pháp lý & Liên hệ — trang tĩnh, dùng chung giao diện landing. */
+import "../styles/landing.css";
+import { CONTACT, SITE, TRACKING } from "../config/landing";
+
+export const prerender = true;
+---
+
+<!doctype html>
+<html lang="vi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="fraudguard-verification" content="5c1da588ec73beb9a336e87577292e2b94275e3c45deb6e1b84c8efa93ca0e11" />
+		<title>Thông tin doanh nghiệp & Liên hệ | {CONTACT.companyShort}</title>
+		<meta name="description" content={`Hồ sơ pháp lý, giấy phép kinh doanh và thông tin liên hệ chính thức của ${CONTACT.company}.`} />
+		{SITE.url && <link rel="canonical" href={SITE.url + "/lien-he"} />}
+		<link rel="icon" type="image/png" href="/img/favicon.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+
+		{
+			TRACKING.gtmId && (
+				<script
+					is:inline
+					set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${TRACKING.gtmId}');`}
+				/>
+			)
+		}
+	</head>
+	<body>
+		{
+			TRACKING.gtmId && (
+				<noscript>
+					<iframe src={`https://www.googletagmanager.com/ns.html?id=${TRACKING.gtmId}`} height="0" width="0" style="display:none;visibility:hidden" />
+				</noscript>
+			)
+		}
+		<header class="hd hd--solid">
+			<div class="wrap hd__in">
+				<a href="/" class="hd__logo" aria-label="Về trang chủ TT GENESIS"><img src="/img/logo-white.png" alt="TT GENESIS" width="156" height="40" /></a>
+				<a href="/" class="btn btn--ghost hd__call">← Về trang chủ</a>
+			</div>
+		</header>
+
+		<main class="doc">
+			<article class="wrap wrap--narrow">
+				<h1>Hồ sơ doanh nghiệp & Thông tin liên hệ</h1>
+				<p class="lead" style="color:var(--ink-2);margin-bottom:24px">
+					Thông tin pháp lý chính thức của đơn vị tư vấn và phân phối dự án TT GENESIS – căn cứ theo Giấy chứng nhận đăng ký doanh nghiệp.
+				</p>
+
+				<div style="background:#f6f1e6;border:1px solid #e2d7c5;border-radius:12px;padding:24px;margin:24px 0">
+					<h2 style="margin-top:0;font-size:20px;color:var(--navy)">Hồ sơ pháp lý đăng ký kinh doanh</h2>
+					<table style="width:100%;border-collapse:collapse;margin-top:12px;font-size:15px">
+						<tbody>
+							<tr style="border-bottom:1px solid #e5ded1">
+								<td style="padding:10px 0;font-weight:600;width:38%">Tên doanh nghiệp tiếng Việt:</td>
+								<td style="padding:10px 0"><b>CÔNG TY CỔ PHẦN KINH DOANH BẤT ĐỘNG SẢN LUNA HOLDINGS</b></td>
+							</tr>
+							<tr style="border-bottom:1px solid #e5ded1">
+								<td style="padding:10px 0;font-weight:600">Tên tiếng nước ngoài:</td>
+								<td style="padding:10px 0">LUNA HOLDINGS REAL ESTATE TRADING JOINT STOCK COMPANY</td>
+							</tr>
+							<tr style="border-bottom:1px solid #e5ded1">
+								<td style="padding:10px 0;font-weight:600">Tên viết tắt:</td>
+								<td style="padding:10px 0">LUNA HOLDINGS JSC</td>
+							</tr>
+							<tr style="border-bottom:1px solid #e5ded1">
+								<td style="padding:10px 0;font-weight:600">Mã số doanh nghiệp / MST:</td>
+								<td style="padding:10px 0"><b>0318925374</b></td>
+							</tr>
+							<tr style="border-bottom:1px solid #e5ded1">
+								<td style="padding:10px 0;font-weight:600">Ngày cấp lần đầu:</td>
+								<td style="padding:10px 0">23/04/2025</td>
+							</tr>
+							<tr style="border-bottom:1px solid #e5ded1">
+								<td style="padding:10px 0;font-weight:600">Cơ quan cấp:</td>
+								<td style="padding:10px 0">Phòng Đăng ký kinh doanh – Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh</td>
+							</tr>
+							<tr style="border-bottom:1px solid #e5ded1">
+								<td style="padding:10px 0;font-weight:600">Địa chỉ trụ sở chính:</td>
+								<td style="padding:10px 0"><b>427 Đường Số 1, Phường Bình Trị Đông B, Quận Bình Tân, Thành phố Hồ Chí Minh, Việt Nam</b></td>
+							</tr>
+							<tr style="border-bottom:1px solid #e5ded1">
+								<td style="padding:10px 0;font-weight:600">Người đại diện pháp luật:</td>
+								<td style="padding:10px 0"><b>NGUYỄN NGỌC PHÁP</b></td>
+							</tr>
+							<tr>
+								<td style="padding:10px 0;font-weight:600">Chức danh:</td>
+								<td style="padding:10px 0">Chủ tịch Hội đồng quản trị kiêm Tổng Giám đốc</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h2>Thông tin liên hệ & Hỗ trợ khách hàng</h2>
+				<ul>
+					<li><b>Hotline tư vấn dự án:</b> <a href={`tel:${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a></li>
+					<li><b>Hỗ trợ qua Zalo:</b> <a href={`https://zalo.me/${CONTACT.zalo}`} target="_blank" rel="noopener">{CONTACT.phoneDisplay}</a></li>
+					<li><b>Email dịch vụ khách hàng:</b> <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
+					<li><b>Thời gian làm việc:</b> Thứ Hai – Chủ Nhật (08:00 – 21:00)</li>
+					<li><b>Địa chỉ tiếp khách:</b> 427 Đường Số 1, Phường Bình Trị Đông B, Quận Bình Tân, TP. Hồ Chí Minh</li>
+				</ul>
+
+				<h2>Tư cách phân phối dự án</h2>
+				<p>
+					Luna Holdings là đơn vị hoạt động chuyên nghiệp trong lĩnh vực môi giới và phân phối các sản phẩm bất động sản căn hộ, nhà ở. Đối với dự án TT GENESIS, Luna Holdings đóng vai trò là đơn vị tư vấn, phân phối độc lập, hỗ trợ khách hàng tiếp cận thông tin chuẩn xác từ chủ đầu tư và hướng dẫn thủ tục đăng ký tham quan nhà mẫu, làm việc với các ngân hàng bảo lãnh.
+				</p>
+			</article>
+		</main>
+
+		<footer class="ft">
+			<div class="wrap ft__legal">
+				<p>{CONTACT.company} · MST {CONTACT.taxCode} · Trụ sở: {CONTACT.address}</p>
+				<p>
+					Trang thông tin do {CONTACT.companyShort} – đơn vị tư vấn, phân phối – thực hiện; không phải website chính thức của chủ đầu tư dự án TT GENESIS.
+				</p>
+				<p>
+					<a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> · 
+					<a href="/dieu-khoan-su-dung">Điều khoản sử dụng</a> · 
+					<a href="/lien-he">Thông tin pháp lý & Liên hệ</a>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

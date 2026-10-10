@@ -27,9 +27,9 @@ const offers = [
 	{
 		big: "1%",
 		title: "Chiết khấu giữ chỗ sớm",
-		text: "Áp dụng cho khách hàng có giữ chỗ đến hết ngày 06/10/2026.",
-		tag: "Đến 06/10/2026",
-		expires: "2026-10-06T23:59:59+07:00",
+		text: "Áp dụng cho khách hàng có giữ chỗ sớm trong tháng 10/2026 (*).",
+		tag: "Đến 31/10/2026",
+		expires: "2026-10-31T23:59:59+07:00",
 	},
 	{
 		big: "29 triệu",
@@ -46,7 +46,7 @@ const offers = [
 		big: "100%",
 		unit: " HTLS",
 		title: "Vay 40% – hỗ trợ lãi suất đến 100%",
-		text: "Ân hạn gốc 24 tháng, hỗ trợ lãi suất đến khi có thông báo nhận nhà (*).",
+		text: "Ân hạn gốc 24 tháng, hỗ trợ lãi suất do ngân hàng đối tác tài trợ đến khi nhận nhà (*).",
 	},
 	{
 		big: "3 món",
@@ -369,9 +369,12 @@ const faqLd = {
 		<!-- ================= HEADER ================= -->
 		<header class="hd" id="top">
 			<div class="wrap hd__in">
-				<a href="#top" class="hd__logo" aria-label="TT GENESIS">
-					<img src="/img/logo-white.png" alt="TT GENESIS" width="156" height="40" />
-				</a>
+				<div class="hd__brand">
+					<a href="#top" class="hd__logo" aria-label="TT GENESIS">
+						<img src="/img/logo-white.png" alt="TT GENESIS" width="156" height="40" />
+					</a>
+					<span class="hd__badge">Phân phối bởi {CONTACT.companyShort}</span>
+				</div>
 				<nav class="hd__nav" aria-label="Điều hướng">
 					<a href="#uu-dai">Ưu đãi</a>
 					<a href="#vi-tri">Vị trí</a>
@@ -397,7 +400,7 @@ const faqLd = {
 				</picture>
 				<div class="wrap hero__in">
 					<div class="hero__copy">
-						<p class="eyebrow">Liên doanh Việt Nam · Nhật Bản · Singapore</p>
+						<p class="eyebrow">Dự án Liên doanh Việt Nam · Nhật Bản · Singapore · Phân phối bởi {CONTACT.companyShort}</p>
 						<h1>
 							<span class="h1__small">Căn hộ</span>
 							Tri thức <em>Nhật Bản</em>
@@ -417,8 +420,8 @@ const faqLd = {
 						<ul class="hero__ticks">
 							<li>88 tiện ích Compound Resort trên 1,9 ha</li>
 							<li>Sổ hồng sở hữu lâu dài · VPBank bảo lãnh</li>
-							<li data-expires="2026-10-06T23:59:59+07:00">Chiết khấu 1% cho khách đăng ký sớm đến 06/10/2026 (*)</li>
-							<li data-show-after="2026-10-06T23:59:59+07:00" hidden>Chính sách thanh toán linh hoạt, đến 8% chiết khấu</li>
+							<li data-expires="2026-10-31T23:59:59+07:00">Chiết khấu 1% cho khách đăng ký sớm trong tháng 10/2026 (*)</li>
+							<li data-show-after="2026-10-31T23:59:59+07:00" hidden>Chính sách thanh toán linh hoạt, đến 8% chiết khấu</li>
 						</ul>
 						<div class="hero__cta">
 							<a href="#dang-ky" class="btn btn--gold btn--lg" data-track="cta_hero">Nhận bảng giá & chính sách</a>
@@ -450,7 +453,7 @@ const faqLd = {
 						<p class="eyebrow">Chính sách bán hàng Đợt 1</p>
 						<h2>Ưu đãi dành cho <em>khách hàng tiên phong</em></h2>
 						<p class="lead">Chính sách bán hàng Đợt 1 do chủ đầu tư ban hành. Ưu đãi chiết khấu 1% cho khách đăng ký sớm kết thúc sau:</p>
-						<div class="countdown" data-deadline="2026-10-06T23:59:59+07:00" aria-live="off">
+						<div class="countdown" data-deadline="2026-10-31T23:59:59+07:00" aria-live="off">
 							<div><b data-cd="d">--</b><span>ngày</span></div>
 							<div><b data-cd="h">--</b><span>giờ</span></div>
 							<div><b data-cd="m">--</b><span>phút</span></div>
@@ -467,7 +470,7 @@ const faqLd = {
 							</article>
 						))}
 					</div>
-					<p class="fine">(*) Chi tiết theo thông báo chính sách bán hàng do chủ đầu tư ban hành tại từng thời điểm. Các chính sách có thể không áp dụng đồng thời.</p>
+					<p class="fine">(*) Chi tiết theo thông báo chính sách bán hàng do chủ đầu tư ban hành tại từng thời điểm. Gói hỗ trợ tài chính do ngân hàng đối tác liên kết tài trợ theo điều kiện xét duyệt. Các chính sách có thể không áp dụng đồng thời.</p>
 					<div class="center">
 						<a href="#dang-ky" class="btn btn--gold btn--lg" data-track="cta_offers">Nhận chi tiết chính sách Đợt 1</a>
 					</div>
@@ -778,15 +781,19 @@ const faqLd = {
 					<h4>Đơn vị tư vấn & phân phối</h4>
 					<p>
 						<b>{CONTACT.company}</b><br />
-						MST: {CONTACT.taxCode}<br />
-						{CONTACT.address}
+						Mã số DN / MST: {CONTACT.taxCode} (Cấp ngày {CONTACT.licenseDate} tại {CONTACT.licensePlace})<br />
+						Người đại diện pháp luật: {CONTACT.representative}<br />
+						Trụ sở chính: {CONTACT.address}
 					</p>
 				</div>
 				<div>
-					<h4>Liên hệ</h4>
+					<h4>Liên hệ & Thông tin</h4>
 					<p>
 						Hotline/Zalo: <a href={telHref} data-track="call_footer">{CONTACT.phoneDisplay}</a> ({CONTACT.advisor})<br />
 						Email: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+					</p>
+					<p style="margin-top:8px;font-size:13px">
+						<a href="/lien-he" style="color:var(--gold,#c69a5f);text-decoration:underline">Hồ sơ pháp lý doanh nghiệp & Liên hệ →</a>
 					</p>
 				</div>
 			</div>
@@ -797,7 +804,12 @@ const faqLd = {
 					mà không cần báo trước; nội dung chính thức căn cứ theo hợp đồng và văn bản do chủ đầu tư ban hành. Hình ảnh phối cảnh chỉ mang tính minh hoạ.
 				</p>
 				<p>Thông tin cá nhân bạn cung cấp chỉ được dùng để tư vấn về dự án TT GENESIS và không chia sẻ cho bên thứ ba.</p>
-				<p><a href="/chinh-sach-bao-mat">Chính sách bảo mật thông tin</a> · © 2026 {CONTACT.companyShort}.</p>
+				<p>
+					<a href="/chinh-sach-bao-mat">Chính sách bảo mật thông tin</a> · 
+					<a href="/dieu-khoan-su-dung">Điều khoản sử dụng & Miễn trừ trách nhiệm</a> · 
+					<a href="/lien-he">Thông tin pháp lý & Liên hệ</a> · 
+					© 2026 {CONTACT.companyShort}.
+				</p>
 			</div>
 		</footer>
 

@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Allow: /chinh-sach-bao-mat
+Allow: /dieu-khoan-su-dung
+Allow: /lien-he
+
+# Block internal CMS and dummy blog routes
+Disallow: /_emdash/
+Disallow: /posts/
+Disallow: /posts
+Disallow: /pages/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /rss.xml
+Disallow: /search
+
+Sitemap: https://ttgenesis-luna.com/sitemap.xml

@@ -566,7 +566,7 @@ function genesis_render_campaign_settings_page() {
 	$company       = genesis_get_option( 'genesis_company_name', 'CÔNG TY CP KINH DOANH BẤT ĐỘNG SẢN LUNA HOLDINGS' );
 	$company_short = genesis_get_option( 'genesis_company_short', 'Luna Holdings' );
 	$tax_code      = genesis_get_option( 'genesis_tax_code', '0318925374' );
-	$address       = genesis_get_option( 'genesis_address', '427 Đường Số 1, Phường An Lạc, TP. Hồ Chí Minh, Việt Nam' );
+	$address       = genesis_get_option( 'genesis_address', '427 Đường Số 1, Phường Bình Trị Đông B, Quận Bình Tân, Thành phố Hồ Chí Minh, Việt Nam' );
 	$webhook_url   = genesis_get_option( 'genesis_webhook_url', '' );
 	$gtm_id        = genesis_get_option( 'genesis_gtm_id', '' );
 	$gtag_id       = genesis_get_option( 'genesis_gtag_id', '' );
