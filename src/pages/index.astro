@@ -25,13 +25,6 @@ const stats = [
 
 const offers = [
 	{
-		big: "1%",
-		title: "Chiết khấu giữ chỗ sớm",
-		text: "Áp dụng cho khách hàng có giữ chỗ sớm trong tháng 10/2026 (*).",
-		tag: "Đến 31/10/2026",
-		expires: "2026-10-31T23:59:59+07:00",
-	},
-	{
 		big: "29 triệu",
 		unit: "/tháng",
 		title: "Thanh toán cố định – không vay",
@@ -420,8 +413,7 @@ const faqLd = {
 						<ul class="hero__ticks">
 							<li>88 tiện ích Compound Resort trên 1,9 ha</li>
 							<li>Sổ hồng sở hữu lâu dài · VPBank bảo lãnh</li>
-							<li data-expires="2026-10-31T23:59:59+07:00">Chiết khấu 1% cho khách đăng ký sớm trong tháng 10/2026 (*)</li>
-							<li data-show-after="2026-10-31T23:59:59+07:00" hidden>Chính sách thanh toán linh hoạt, đến 8% chiết khấu</li>
+							<li>Chính sách thanh toán linh hoạt, chiết khấu thanh toán nhanh đến 8% (*)</li>
 						</ul>
 						<div class="hero__cta">
 							<a href="#dang-ky" class="btn btn--gold btn--lg" data-track="cta_hero">Nhận bảng giá & chính sách</a>
@@ -452,13 +444,7 @@ const faqLd = {
 					<header class="sec__hd">
 						<p class="eyebrow">Chính sách bán hàng Đợt 1</p>
 						<h2>Ưu đãi dành cho <em>khách hàng tiên phong</em></h2>
-						<p class="lead">Chính sách bán hàng Đợt 1 do chủ đầu tư ban hành. Ưu đãi chiết khấu 1% cho khách đăng ký sớm kết thúc sau:</p>
-						<div class="countdown" data-deadline="2026-10-31T23:59:59+07:00" aria-live="off">
-							<div><b data-cd="d">--</b><span>ngày</span></div>
-							<div><b data-cd="h">--</b><span>giờ</span></div>
-							<div><b data-cd="m">--</b><span>phút</span></div>
-							<div><b data-cd="s">--</b><span>giây</span></div>
-						</div>
+						<p class="lead">Chính sách bán hàng Đợt 1 do chủ đầu tư ban hành, áp dụng theo thông báo chính thức tại từng thời điểm.</p>
 					</header>
 					<div class="offers">
 						{offers.map((o) => (
