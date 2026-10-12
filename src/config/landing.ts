@@ -42,7 +42,12 @@ export const TRACKING = {
 	/** Google Tag Manager, ví dụ "GTM-XXXXXXX" */
 	gtmId: "GTM-M79KB9X5",
 	/** Google Analytics 4 / Google Ads, ví dụ "G-XXXXXXXXXX" hoặc "AW-XXXXXXXXX" */
-	gtagId: "",
+	gtagId: "AW-18479603583",
+	/**
+	 * Nhãn chuyển đổi Google Ads bắn khi gửi form thành công (sự kiện generate_lead).
+	 * Lấy từ tài khoản Luna Holdings – hành động "Lượt gửi biểu mẫu khách hàng tiềm năng".
+	 */
+	adsConversion: "AW-18479603583/MkylCIzY5YgdEP--4etE",
 	/** Meta (Facebook) Pixel ID */
 	metaPixelId: "",
 	/** TikTok Pixel ID */
