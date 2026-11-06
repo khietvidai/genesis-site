@@ -27,7 +27,7 @@ const offers = [
 	{
 		big: "29 triệu",
 		unit: "/tháng",
-		title: "Thanh toán cố định – không vay",
+		title: "Thanh toán cố định – không bắt buộc vay",
 		text: "Phương thức “Dễ sở hữu 2”: sau khi ký HĐMB chỉ đóng cố định 29 triệu/tháng trong 23 tháng.",
 	},
 	{
@@ -87,9 +87,9 @@ const strengths = [
 ];
 
 const distances = [
-	{ v: "01 phút", l: "Đến sảnh chờ Metro số 4 & số 7" },
-	{ v: "03 phút", l: "Đến trung tâm Phú Mỹ Hưng" },
-	{ v: "05 phút", l: "Đến các TTTM cao cấp, trường Đại học danh tiếng và Metro Bến Thành – Cần Giờ" },
+	{ v: "~03 phút", l: "Đến trung tâm Phú Mỹ Hưng (theo công bố của chủ đầu tư)" },
+	{ v: "~05 phút", l: "Đến các TTTM cao cấp và trường Đại học quanh Phú Mỹ Hưng (theo công bố của chủ đầu tư)" },
+	{ v: "2035", l: "Metro số 4 & số 7 dự kiến hoàn thành – ga theo quy hoạch gần dự án, hiện chưa khởi công" },
 ];
 
 const infra = [
@@ -130,7 +130,7 @@ const payments = [
 		id: "de-so-huu-2",
 		tab: "Dễ sở hữu 2 · 29tr/tháng",
 		hl: "29 triệu/tháng",
-		sub: "Cố định trong 23 tháng – không cần vay ngân hàng",
+		sub: "Cố định trong 23 tháng – không bắt buộc vay ngân hàng",
 		steps: [
 			["10%", "Ký Văn bản thoả thuận"],
 			["5%", "Sau 3 tháng"],
@@ -245,7 +245,7 @@ const pros = [
 	["Chủ đầu tư & liên doanh rõ ràng", "Chủ đầu tư là Công ty CP Bất động sản Phúc Long – Phước Kiển; đơn vị phát triển là liên doanh TT Capital cùng các đối tác Nhật Bản và Singapore."],
 	["Hồ sơ pháp lý đã có", "Chủ trương đầu tư, quy hoạch 1/500, giao đất – chuyển mục đích sử dụng đất, miễn giấy phép xây dựng; VPBank bảo lãnh dự án."],
 	["Vị trí liền kề Phú Mỹ Hưng", "Mặt tiền đường 30m, 3 mặt hướng sông, 4 mặt tiền đường; khoảng 3 phút đến trung tâm Phú Mỹ Hưng (theo công bố của chủ đầu tư)."],
-	["Nhiều cách thanh toán", "Có phương thức đóng cố định theo tháng không cần vay, phương thức chuẩn giãn đến khi bàn giao, vay 40% và thanh toán nhanh."],
+	["Nhiều cách thanh toán", "Có phương thức đóng cố định theo tháng không bắt buộc vay, phương thức chuẩn giãn đến khi bàn giao, vay 40% và thanh toán nhanh."],
 	["Tiện ích & bàn giao", "88 tiện ích trong khu compound khép kín; thiết bị thương hiệu Nhật Bản – Châu Âu – Mỹ; 100% căn có ban công/logia và sân phơi."],
 ];
 
@@ -394,7 +394,7 @@ const faqLd = {
 					<a href="#top" class="hd__logo" aria-label="TT GENESIS">
 						<img src="/img/logo-white.png" alt="TT GENESIS" width="156" height="40" />
 					</a>
-					<span class="hd__badge">Phân phối bởi {CONTACT.companyShort}</span>
+					<span class="hd__badge">Tư vấn bởi {CONTACT.companyShort}</span>
 				</div>
 				<nav class="hd__nav" aria-label="Điều hướng">
 					<a href="#uu-dai">Chính sách</a>
@@ -422,7 +422,7 @@ const faqLd = {
 				</picture>
 				<div class="wrap hero__in">
 					<div class="hero__copy">
-						<p class="eyebrow">Dự án Liên doanh Việt Nam · Nhật Bản · Singapore · Phân phối bởi {CONTACT.companyShort}</p>
+						<p class="eyebrow">Dự án do liên doanh Việt Nam · Nhật Bản · Singapore phát triển · Trang tư vấn độc lập của {CONTACT.companyShort}, không phải chủ đầu tư</p>
 						<h1>
 							<span class="h1__small">Căn hộ</span>
 							Tri thức <em>Nhật Bản</em>
@@ -526,6 +526,7 @@ const faqLd = {
 					<div class="loc">
 						<figure class="loc__map">
 							<img src="/img/location-map.webp" alt="Bản đồ vị trí TT GENESIS và các tuyến kết nối Nam Sài Gòn" width="1800" height="1012" loading="lazy" data-zoom />
+							<figcaption class="loc__cap">Bản đồ minh hoạ từ tài liệu của chủ đầu tư. Thời gian di chuyển mang tính tham khảo; Metro số 4 &amp; số 7 hiện chưa khởi công, dự kiến hoàn thành 2035.</figcaption>
 						</figure>
 						<div class="loc__side">
 							<ul class="dist">

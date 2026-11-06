@@ -57,7 +57,7 @@ export const TRACKING = {
 export const SITE = {
 	/** Tên miền chạy chính thức (dùng cho canonical & ảnh chia sẻ). Để trống nếu chưa có. */
 	url: "https://ttgenesis-luna.com",
-	title: "TT GENESIS – Căn hộ Tri thức Nhật Bản Nam Sài Gòn | Phân phối bởi Luna Holdings",
+	title: "TT GENESIS – Căn hộ Tri thức Nhật Bản Nam Sài Gòn | Tư vấn bởi Luna Holdings",
 	description:
-		"TT GENESIS – căn hộ cao cấp liền kề Phú Mỹ Hưng, liên doanh Việt Nam – Nhật Bản – Singapore. Tư vấn và phân phối bởi Công ty CP Kinh doanh Bất động sản Luna Holdings (MST 0318925374). Nhận bảng giá & chính sách đợt 1 mới nhất.",
+		"TT GENESIS – căn hộ cao cấp liền kề Phú Mỹ Hưng, liên doanh Việt Nam – Nhật Bản – Singapore. Trang tư vấn của Công ty CP Kinh doanh Bất động sản Luna Holdings (MST 0318925374) – đơn vị môi giới độc lập, không phải chủ đầu tư. Nhận bảng giá & chính sách đợt 1 mới nhất.",
 };

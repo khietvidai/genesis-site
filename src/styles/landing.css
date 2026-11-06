@@ -468,3 +468,5 @@ h3 { font-size: 18px; font-weight: 600; line-height: 1.35; }
 .pc__col--con li::before { content: "!"; background: var(--navy); }
 .pc__col b { display: block; color: var(--ink); font-size: 15.5px; margin-bottom: 3px; }
 .pc__col span { color: var(--ink-2); font-size: 14.5px; line-height: 1.55; }
+
+.loc__cap { margin-top: 8px; font-size: 12.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.7); }
