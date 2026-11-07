@@ -59,5 +59,5 @@ export const SITE = {
 	url: "https://ttgenesis-luna.com",
 	title: "TT GENESIS – Căn hộ Tri thức Nhật Bản Nam Sài Gòn | Tư vấn bởi Luna Holdings",
 	description:
-		"TT GENESIS – căn hộ cao cấp liền kề Phú Mỹ Hưng, liên doanh Việt Nam – Nhật Bản – Singapore. Trang tư vấn của Công ty CP Kinh doanh Bất động sản Luna Holdings (MST 0318925374) – đơn vị môi giới độc lập, không phải chủ đầu tư. Nhận bảng giá & chính sách đợt 1 mới nhất.",
+		"TT GENESIS – căn hộ cao cấp liền kề Phú Mỹ Hưng, liên doanh Việt Nam – Nhật Bản – Singapore. Trang tư vấn của Công ty CP Kinh doanh Bất động sản Luna Holdings (MST 0318925374) – đối tác phân phối chính thức, không phải chủ đầu tư. Nhận bảng giá & chính sách đợt 1 mới nhất.",
 };
